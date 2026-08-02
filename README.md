@@ -1,8 +1,8 @@
 # Clay Terminal
 
-[![Version](https://img.shields.io/visual-studio-marketplace/v/astechlabs.cc-theme?label=marketplace)](https://marketplace.visualstudio.com/items?itemName=astechlabs.cc-theme)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/astechlabs.cc-theme)](https://marketplace.visualstudio.com/items?itemName=astechlabs.cc-theme)
-[![Rating](https://img.shields.io/visual-studio-marketplace/r/astechlabs.cc-theme)](https://marketplace.visualstudio.com/items?itemName=astechlabs.cc-theme)
+[![Version](https://vsmarketplacebadges.dev/version-short/astechlabs.cc-theme.svg?label=marketplace)](https://marketplace.visualstudio.com/items?itemName=astechlabs.cc-theme)
+[![Installs](https://vsmarketplacebadges.dev/installs-short/astechlabs.cc-theme.svg)](https://marketplace.visualstudio.com/items?itemName=astechlabs.cc-theme)
+[![Rating](https://vsmarketplacebadges.dev/rating-short/astechlabs.cc-theme.svg)](https://marketplace.visualstudio.com/items?itemName=astechlabs.cc-theme)
 
 VS Code color themes inspired by a coral terminal aesthetic — dark and light variants, built from real warm-gray/coral design tokens. Coral accent (`#D97757`), semantic highlighting, bracket-pair colors, diff/merge colors.
 

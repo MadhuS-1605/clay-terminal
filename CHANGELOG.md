@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.2
+
+- Fixed Marketplace README badges showing "retired badge" — shields.io retired its `visual-studio-marketplace` badge family; switched to `vsmarketplacebadges.dev`.
+
 ## 0.4.1
 
 - Expanded `Clay Terminal Icons` to 79 icons: real brand logos (JS/TS/Python/Go/Rust/Docker/Git/ESLint/Prettier/Webpack/Vite/Jest/Babel/...) plus more folder types (api, database, kubernetes, i18n, vendor, coverage, ...).

@@ -5,6 +5,12 @@ VS Code color themes inspired by a coral terminal aesthetic — dark and light v
 - **Clay Terminal** — dark, near-black warm background
 - **Clay Terminal Light** — light, warm off-white background
 
+## Screenshots
+
+| Dark | Light |
+| --- | --- |
+| ![Clay Terminal dark](https://raw.githubusercontent.com/MadhuS-1605/clay-terminal/main/images/dark.png) | ![Clay Terminal light](https://raw.githubusercontent.com/MadhuS-1605/clay-terminal/main/images/light.png) |
+
 ## Install (local dev)
 
 ```sh

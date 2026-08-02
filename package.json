@@ -1,0 +1,32 @@
+{
+  "name": "cc-theme",
+  "displayName": "Clay Terminal",
+  "description": "A warm dark/light VS Code theme with a coral terminal-inspired accent.",
+  "version": "0.2.0",
+  "publisher": "astechlabs",
+  "icon": "icon.png",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": ["Themes"],
+  "keywords": ["theme", "color-theme", "dark theme", "light theme", "terminal"],
+  "galleryBanner": {
+    "color": "#1a1a19",
+    "theme": "dark"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Clay Terminal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-code-color-theme.json"
+      },
+      {
+        "label": "Clay Terminal Light",
+        "uiTheme": "vs",
+        "path": "./themes/claude-code-light-color-theme.json"
+      }
+    ]
+  }
+}

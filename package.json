@@ -2,7 +2,7 @@
   "name": "cc-theme",
   "displayName": "Clay Terminal",
   "description": "A warm dark/light VS Code theme with a coral terminal-inspired accent.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "publisher": "astechlabs",
   "icon": "icon.png",
   "license": "MIT",

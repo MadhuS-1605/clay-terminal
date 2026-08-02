@@ -21,14 +21,10 @@ Pairs well with a clean monospace font like JetBrains Mono or Berkeley Mono, tho
 
 ## Install (local dev)
 
-```sh
-ln -s "$(pwd)" ~/.vscode/extensions/clay-terminal
-```
-
-Reload VS Code, then `Cmd+K Cmd+T` → pick a color theme, and `Cmd+K Cmd+I` → **Clay Terminal Icons** for the file icons.
-
-## Package for sharing
+Package and install the `.vsix` rather than symlinking — VS Code doesn't reliably resolve an icon theme's image assets through a symlinked dev extension.
 
 ```sh
 npx @vscode/vsce package
 ```
+
+Command Palette → **Extensions: Install from VSIX...** → select the generated file, reload VS Code, then Command Palette → **Preferences: Color Theme** to pick a color theme, and **Preferences: File Icon Theme** → **Clay Terminal Icons** for the file icons. (Neither picker has a default keybinding.)

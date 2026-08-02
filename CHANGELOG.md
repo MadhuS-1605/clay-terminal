@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.1
+
+- Expanded `Clay Terminal Icons` to 79 icons: real brand logos (JS/TS/Python/Go/Rust/Docker/Git/ESLint/Prettier/Webpack/Vite/Jest/Babel/...) plus more folder types (api, database, kubernetes, i18n, vendor, coverage, ...).
+- Refined icon proportions — bigger centered logos, tighter card margins, closer to a Material Icon Theme look.
+- Fixed icon theme not rendering when the extension is dev-installed via symlink (VS Code fails to resolve icon image paths through symlinks); README now recommends installing the packaged `.vsix` instead.
+
 ## 0.4.0
 
 - Added `Clay Terminal Icons`, a matching file icon theme (folders + ~30 file types), bundled in this same extension.

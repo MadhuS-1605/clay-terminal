@@ -3,4 +3,5 @@
 .github/**
 .gitignore
 CLAUDE.md
+icons/generate_icons.py
 *.vsix

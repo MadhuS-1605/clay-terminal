@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0
+
+- Added `Clay Terminal Icons`, a matching file icon theme (folders + ~30 file types), bundled in this same extension.
+
 ## 0.3.0
 
 - Added `Clay Terminal High Contrast` (hc-black) and `Clay Terminal Light High Contrast` (hc-light) theme variants.

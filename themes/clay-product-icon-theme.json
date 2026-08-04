@@ -1,0 +1,49 @@
+{
+  "fonts": [
+    {
+      "id": "clay-icons",
+      "src": [
+        {
+          "path": "../icons/clay-product-icons.woff",
+          "format": "woff"
+        }
+      ],
+      "weight": "normal",
+      "style": "normal"
+    }
+  ],
+  "iconDefinitions": {
+    "chevron-right": {
+      "fontCharacter": "\\ea01",
+      "fontId": "clay-icons"
+    },
+    "chevron-down": {
+      "fontCharacter": "\\ea02",
+      "fontId": "clay-icons"
+    },
+    "folder": {
+      "fontCharacter": "\\ea03",
+      "fontId": "clay-icons"
+    },
+    "folder-opened": {
+      "fontCharacter": "\\ea04",
+      "fontId": "clay-icons"
+    },
+    "circle-filled": {
+      "fontCharacter": "\\ea05",
+      "fontId": "clay-icons"
+    },
+    "close": {
+      "fontCharacter": "\\ea06",
+      "fontId": "clay-icons"
+    },
+    "git-branch": {
+      "fontCharacter": "\\ea07",
+      "fontId": "clay-icons"
+    },
+    "git-commit": {
+      "fontCharacter": "\\ea08",
+      "fontId": "clay-icons"
+    }
+  }
+}

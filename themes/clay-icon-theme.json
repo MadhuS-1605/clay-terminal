@@ -105,6 +105,42 @@
     "_babel": {
       "iconPath": "../icons/file-babel.png"
     },
+    "_c": {
+      "iconPath": "../icons/file-c.png"
+    },
+    "_cpp": {
+      "iconPath": "../icons/file-cpp.png"
+    },
+    "_csharp": {
+      "iconPath": "../icons/file-csharp.png"
+    },
+    "_php": {
+      "iconPath": "../icons/file-php.png"
+    },
+    "_ruby": {
+      "iconPath": "../icons/file-ruby.png"
+    },
+    "_swift": {
+      "iconPath": "../icons/file-swift.png"
+    },
+    "_kotlin": {
+      "iconPath": "../icons/file-kotlin.png"
+    },
+    "_graphql": {
+      "iconPath": "../icons/file-graphql.png"
+    },
+    "_terraform": {
+      "iconPath": "../icons/file-terraform.png"
+    },
+    "_svelte": {
+      "iconPath": "../icons/file-svelte.png"
+    },
+    "_dart": {
+      "iconPath": "../icons/file-dart.png"
+    },
+    "_lua": {
+      "iconPath": "../icons/file-lua.png"
+    },
     "_folder": {
       "iconPath": "../icons/folder.png"
     },
@@ -261,7 +297,6 @@
     "go": "_go",
     "rs": "_rs",
     "java": "_java",
-    "kt": "_java",
     "html": "_html",
     "htm": "_html",
     "css": "_css",
@@ -287,7 +322,25 @@
     "vue": "_vue",
     "sh": "_shell",
     "bash": "_shell",
-    "zsh": "_shell"
+    "zsh": "_shell",
+    "c": "_c",
+    "h": "_c",
+    "cpp": "_cpp",
+    "cc": "_cpp",
+    "hpp": "_cpp",
+    "cs": "_csharp",
+    "php": "_php",
+    "rb": "_ruby",
+    "swift": "_swift",
+    "kt": "_kotlin",
+    "kts": "_kotlin",
+    "graphql": "_graphql",
+    "gql": "_graphql",
+    "tf": "_terraform",
+    "tfvars": "_terraform",
+    "svelte": "_svelte",
+    "dart": "_dart",
+    "lua": "_lua"
   },
   "fileNames": {
     "dockerfile": "_docker",

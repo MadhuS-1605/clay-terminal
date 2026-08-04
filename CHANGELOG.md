@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0
+
+- Added `Clay Terminal Icons` product icon theme — themed chevrons, folder glyphs, and git icons for the editor UI.
+- Extended `Clay Terminal Icons` file icon theme with 12 more languages: C, C++, C#, Dart, GraphQL, Kotlin, Lua, PHP, Ruby, Svelte, Swift, Terraform.
+- Added `icons/validate_theme.py` and a GitHub Actions workflow to catch broken icon references in CI.
+
 ## 0.4.2
 
 - Fixed Marketplace README badges showing "retired badge" — shields.io retired its `visual-studio-marketplace` badge family; switched to `vsmarketplacebadges.dev`.

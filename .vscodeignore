@@ -4,5 +4,7 @@
 .gitignore
 CLAUDE.md
 icons/generate_icons.py
+icons/product-icon-font.py
+icons/validate_theme.py
 icons/.cache/**
 *.vsix

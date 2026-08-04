@@ -151,6 +151,18 @@ ICONS = {
     "vite": ((219, 147, 0), "VT"),
     "jest": ((208, 59, 59), "JST"),
     "babel": ((235, 201, 183), "BBL"),
+    "c": ((109, 167, 236), "C"),
+    "cpp": ((109, 167, 236), "C++"),
+    "csharp": ((130, 125, 189), "C#"),
+    "php": ((130, 125, 189), "PHP"),
+    "ruby": ((208, 59, 59), "RB"),
+    "swift": ((219, 147, 0), "SW"),
+    "kotlin": ((160, 150, 235), "KT"),
+    "graphql": ((236, 126, 126), "GQL"),
+    "terraform": ((130, 125, 189), "TF"),
+    "svelte": ((219, 147, 0), "SV"),
+    "dart": ((12, 163, 12), "DART"),
+    "lua": ((109, 167, 236), "LUA"),
 }
 
 # file "kind" -> simple-icons slug, only where a real brand mark exists
@@ -179,6 +191,18 @@ FILE_LOGO_SLUGS = {
     "vite": "vite",
     "jest": "jest",
     "babel": "babel",
+    "c": "c",
+    "cpp": "cplusplus",
+    "csharp": "csharp",
+    "php": "php",
+    "ruby": "ruby",
+    "swift": "swift",
+    "kotlin": "kotlin",
+    "graphql": "graphql",
+    "terraform": "terraform",
+    "svelte": "svelte",
+    "dart": "dart",
+    "lua": "lua",
 }
 
 FILE_EXTENSIONS = {
@@ -191,7 +215,7 @@ FILE_EXTENSIONS = {
     "py": "py", "pyw": "py",
     "go": "go",
     "rs": "rs",
-    "java": "java", "kt": "java",
+    "java": "java",
     "html": "html", "htm": "html",
     "css": "css", "less": "css",
     "scss": "scss", "sass": "scss",
@@ -207,6 +231,18 @@ FILE_EXTENSIONS = {
     "sql": "sql",
     "vue": "vue",
     "sh": "shell", "bash": "shell", "zsh": "shell",
+    "c": "c", "h": "c",
+    "cpp": "cpp", "cc": "cpp", "hpp": "cpp",
+    "cs": "csharp",
+    "php": "php",
+    "rb": "ruby",
+    "swift": "swift",
+    "kt": "kotlin", "kts": "kotlin",
+    "graphql": "graphql", "gql": "graphql",
+    "tf": "terraform", "tfvars": "terraform",
+    "svelte": "svelte",
+    "dart": "dart",
+    "lua": "lua",
 }
 
 FILE_NAMES = {

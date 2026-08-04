@@ -141,6 +141,27 @@
     "_lua": {
       "iconPath": "../icons/file-lua.png"
     },
+    "_elixir": {
+      "iconPath": "../icons/file-elixir.png"
+    },
+    "_zig": {
+      "iconPath": "../icons/file-zig.png"
+    },
+    "_haskell": {
+      "iconPath": "../icons/file-haskell.png"
+    },
+    "_r": {
+      "iconPath": "../icons/file-r.png"
+    },
+    "_solidity": {
+      "iconPath": "../icons/file-solidity.png"
+    },
+    "_astro": {
+      "iconPath": "../icons/file-astro.png"
+    },
+    "_prisma": {
+      "iconPath": "../icons/file-prisma.png"
+    },
     "_folder": {
       "iconPath": "../icons/folder.png"
     },
@@ -340,7 +361,16 @@
     "tfvars": "_terraform",
     "svelte": "_svelte",
     "dart": "_dart",
-    "lua": "_lua"
+    "lua": "_lua",
+    "ex": "_elixir",
+    "exs": "_elixir",
+    "zig": "_zig",
+    "hs": "_haskell",
+    "lhs": "_haskell",
+    "r": "_r",
+    "sol": "_solidity",
+    "astro": "_astro",
+    "prisma": "_prisma"
   },
   "fileNames": {
     "dockerfile": "_docker",

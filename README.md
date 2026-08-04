@@ -28,3 +28,22 @@ npx @vscode/vsce package
 ```
 
 Command Palette → **Extensions: Install from VSIX...** → select the generated file, reload VS Code, then Command Palette → **Preferences: Color Theme** to pick a color theme, **Preferences: File Icon Theme** → **Clay Terminal Icons** for the file icons, and **Preferences: Product Icon Theme** → **Clay Terminal Icons** for the UI glyphs. (None of these pickers have a default keybinding.)
+
+## Recommended settings
+
+Optional `settings.json` tweaks that pair well with the coral accent and warm-gray palette:
+
+```jsonc
+{
+  "editor.fontFamily": "'JetBrains Mono', 'Berkeley Mono', Menlo, monospace",
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "solid",
+  "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "workbench.iconTheme": "clay-terminal-icons",
+  "workbench.productIconTheme": "clay-terminal-product-icons"
+}
+```
+
+None of this is required — the themes and icon themes work with default settings.

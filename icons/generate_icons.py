@@ -163,6 +163,13 @@ ICONS = {
     "svelte": ((219, 147, 0), "SV"),
     "dart": ((12, 163, 12), "DART"),
     "lua": ((109, 167, 236), "LUA"),
+    "elixir": ((130, 125, 189), "EX"),
+    "zig": ((219, 147, 0), "ZIG"),
+    "haskell": ((109, 167, 236), "HS"),
+    "r": ((109, 167, 236), "R"),
+    "solidity": ((92, 90, 82), "SOL"),
+    "astro": ((236, 126, 126), "AST"),
+    "prisma": ((26, 26, 25), "PRI"),
 }
 
 # file "kind" -> simple-icons slug, only where a real brand mark exists
@@ -203,6 +210,13 @@ FILE_LOGO_SLUGS = {
     "svelte": "svelte",
     "dart": "dart",
     "lua": "lua",
+    "elixir": "elixir",
+    "zig": "zig",
+    "haskell": "haskell",
+    "r": "r",
+    "solidity": "solidity",
+    "astro": "astro",
+    "prisma": "prisma",
 }
 
 FILE_EXTENSIONS = {
@@ -243,6 +257,13 @@ FILE_EXTENSIONS = {
     "svelte": "svelte",
     "dart": "dart",
     "lua": "lua",
+    "ex": "elixir", "exs": "elixir",
+    "zig": "zig",
+    "hs": "haskell", "lhs": "haskell",
+    "r": "r",
+    "sol": "solidity",
+    "astro": "astro",
+    "prisma": "prisma",
 }
 
 FILE_NAMES = {

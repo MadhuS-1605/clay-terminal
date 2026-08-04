@@ -1,4 +1,4 @@
-"""Validates theme JSON: parses cleanly, and every icon reference resolves.
+"""Validates theme JSON: parses cleanly, and every icon/font reference resolves.
 
 Run: python3 icons/validate_theme.py
 Exits non-zero on any failure (used in CI).
@@ -32,14 +32,25 @@ for name in sorted(os.listdir(THEMES_DIR)):
         continue  # color theme, not an icon theme
 
     defs = data["iconDefinitions"]
+    font_ids = set()
+
+    for font in data.get("fonts", []):
+        font_ids.add(font.get("id"))
+        for src in font.get("src", []):
+            src_path = src.get("path")
+            resolved = os.path.normpath(os.path.join(THEMES_DIR, src_path))
+            if not os.path.isfile(resolved):
+                errors.append(f"{name}: fonts[{font.get('id')}].src -> {src_path} does not exist")
 
     for key, entry in defs.items():
         icon_path = entry.get("iconPath")
-        if not icon_path:
-            continue
-        resolved = os.path.normpath(os.path.join(THEMES_DIR, icon_path))
-        if not os.path.isfile(resolved):
-            errors.append(f"{name}: iconDefinitions.{key}.iconPath -> {icon_path} does not exist")
+        if icon_path:
+            resolved = os.path.normpath(os.path.join(THEMES_DIR, icon_path))
+            if not os.path.isfile(resolved):
+                errors.append(f"{name}: iconDefinitions.{key}.iconPath -> {icon_path} does not exist")
+        font_id = entry.get("fontId")
+        if font_id and font_id not in font_ids:
+            errors.append(f"{name}: iconDefinitions.{key}.fontId -> '{font_id}' not in fonts")
 
     for scalar_key in REF_SCALARS:
         ref = data.get(scalar_key)

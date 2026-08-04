@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.0
+
+- Extended `Clay Terminal Icons` file icon theme with Elixir, Zig, Haskell, R, Solidity, Astro, and Prisma.
+- Added test explorer colors (`testing.icon*`, `testing.runAction`) to all 4 color theme variants.
+- Added notification, debug, and problems-panel colors (`notificationCenter.*`, `debugIcon.*`, `problemsErrorIcon.*`/`problemsWarningIcon.*`) to all 4 color theme variants, so those UI surfaces use the theme's palette instead of VS Code defaults.
+- Added a "Recommended settings" section to the README.
+- Tuned Marketplace keywords for discoverability.
+
 ## 0.5.0
 
 - Added `Clay Terminal Icons` product icon theme — themed chevrons, folder glyphs, and git icons for the editor UI.

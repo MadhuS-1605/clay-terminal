@@ -6,5 +6,6 @@ CLAUDE.md
 icons/generate_icons.py
 icons/product-icon-font.py
 icons/validate_theme.py
+ROADMAP.md
 icons/.cache/**
 *.vsix

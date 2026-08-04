@@ -2,4 +2,3 @@
 *.vsix
 node_modules/
 icons/.cache/
-ROADMAP.md

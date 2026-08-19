@@ -9,3 +9,6 @@ icons/validate_theme.py
 ROADMAP.md
 icons/.cache/**
 *.vsix
+*.db
+.swarm/**
+.claude-flow/**

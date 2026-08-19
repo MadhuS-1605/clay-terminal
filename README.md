@@ -3,6 +3,7 @@
 [![Version](https://vsmarketplacebadges.dev/version-short/astechlabs.cc-theme.svg?label=marketplace)](https://marketplace.visualstudio.com/items?itemName=astechlabs.cc-theme)
 [![Installs](https://vsmarketplacebadges.dev/installs-short/astechlabs.cc-theme.svg)](https://marketplace.visualstudio.com/items?itemName=astechlabs.cc-theme)
 [![Rating](https://vsmarketplacebadges.dev/rating-short/astechlabs.cc-theme.svg)](https://marketplace.visualstudio.com/items?itemName=astechlabs.cc-theme)
+[![Open VSX](https://img.shields.io/open-vsx/v/astechlabs/cc-theme?label=open%20vsx)](https://open-vsx.org/extension/astechlabs/cc-theme)
 
 VS Code color themes inspired by a coral terminal aesthetic — dark and light variants, built from real warm-gray/coral design tokens. Coral accent (`#D97757`), semantic highlighting, bracket-pair colors, diff/merge colors, consistent error/warning marks across the squiggle, gutter, and scrollbar.
 

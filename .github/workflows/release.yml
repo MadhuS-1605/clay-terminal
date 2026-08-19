@@ -30,3 +30,10 @@ jobs:
         with:
           tag_name: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
           generate_release_notes: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Publish to VS Code Marketplace
+        run: npx @vscode/vsce publish
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}

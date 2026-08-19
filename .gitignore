@@ -5,3 +5,4 @@ icons/.cache/
 *.db
 .swarm
 .claude-flow
+.DS_Store

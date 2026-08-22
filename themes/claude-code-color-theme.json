@@ -19,7 +19,7 @@
     "editorWhitespace.foreground": "#3a382f",
     "editorBracketMatch.background": "#d9775733",
     "editorBracketMatch.border": "#d97757",
-    "editorRuler.foreground": "#26261f",
+    "editorRuler.foreground": "#2e2d27",
     "editorUnnecessaryCode.opacity": "#000000aa",
     "editorError.foreground": "#d03b3b",
     "editorWarning.foreground": "#db9300",

@@ -1,6 +1,6 @@
 # Roadmap
 
-Current state (v0.6.1): 4 color theme variants (dark, light, hc-black,
+Current state (v0.6.3): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks and
 unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
@@ -32,10 +32,6 @@ Conventions it follows, so keep them when hand-editing too:
 
 ## Mid-term
 
-- **Indent guide / ruler consistency check** — confirm
-  `editorIndentGuide.*` and `editorRuler.*` are set consistently across all
-  4 color variants (bracket-pair and semantic highlighting were already
-  verified consistent; indent guides weren't).
 - **Light-tuned icon variant (needs go-ahead)** — a second icon set matched
   to the light color theme's contrast (currently one shared icon set
   across dark/light). Don't build speculatively — wait for a request.
@@ -136,6 +132,17 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.6.3
+- Indent guide / ruler consistency check: the dark theme's
+  `editorRuler.foreground` (`#26261f`) didn't match
+  `editorIndentGuide.background1` (`#2e2d27`), unlike the other 3 variants
+  where ruler foreground and indent guide background are the same color.
+  Fixed the dark theme to follow the same pattern.
+
+### v0.6.2
+- Added an Open VSX Registry badge and publish step, so the extension is
+  also available outside the VS Code Marketplace.
 
 ### v0.6.1
 - Diagnostic color polish: added `editorOverviewRuler.errorForeground`/

@@ -15,6 +15,15 @@ REF_KEYS = (
 )
 REF_SCALARS = ("file", "folder", "folderExpanded", "rootFolder", "rootFolderExpanded")
 
+ANSI_COLORS = (
+    "Black", "Red", "Green", "Yellow", "Blue", "Magenta", "Cyan", "White",
+)
+TERMINAL_ANSI_KEYS = tuple(
+    f"terminal.ansi{variant}{color}"
+    for variant in ("", "Bright")
+    for color in ANSI_COLORS
+)
+
 errors = []
 
 for name in sorted(os.listdir(THEMES_DIR)):
@@ -27,6 +36,12 @@ for name in sorted(os.listdir(THEMES_DIR)):
     except json.JSONDecodeError as e:
         errors.append(f"{name}: invalid JSON ({e})")
         continue
+
+    if "colors" in data:
+        colors = data["colors"]
+        for key in TERMINAL_ANSI_KEYS:
+            if key not in colors:
+                errors.append(f"{name}: missing color theme key '{key}'")
 
     if "iconDefinitions" not in data:
         continue  # color theme, not an icon theme

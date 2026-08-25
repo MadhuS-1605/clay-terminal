@@ -1,11 +1,12 @@
 # Roadmap
 
-Current state (v0.6.3): 4 color theme variants (dark, light, hc-black,
+Current state (v0.6.4): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks and
 unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
 product icon theme, and CI validation (`icons/validate_theme.py`) covering
-both icon themes' references and font paths.
+both icon themes' references and font paths, plus a regression guard
+asserting all 16 terminal ANSI colors stay defined in every color theme.
 
 This file is read and updated by the automated release process (see
 `.github/workflows` and the `clay-terminal-auto-release` cloud routine).
@@ -35,11 +36,6 @@ Conventions it follows, so keep them when hand-editing too:
 - **Light-tuned icon variant (needs go-ahead)** — a second icon set matched
   to the light color theme's contrast (currently one shared icon set
   across dark/light). Don't build speculatively — wait for a request.
-- **Terminal ANSI color regression guard** — extend
-  `icons/validate_theme.py` (or a sibling check) to assert all 16
-  `terminal.ansi*` keys stay present in every color theme on every change.
-  All 4 variants already have all 16 today; this locks that in rather than
-  fixing an existing gap.
 
 ## Long-term / optional
 
@@ -132,6 +128,13 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.6.4
+- Terminal ANSI color regression guard: `icons/validate_theme.py` now
+  asserts all 16 `terminal.ansi*` keys (8 colors × normal/Bright) are
+  present in every theme JSON's `colors` block, so a future edit can't
+  silently drop one. All 4 variants already had all 16; this locks that
+  in.
 
 ### v0.6.3
 - Indent guide / ruler consistency check: the dark theme's

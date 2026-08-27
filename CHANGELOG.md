@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.6.4
+
+- Added a terminal ANSI color regression guard to `validate_theme.py`.
+
+## 0.6.3
+
+- Fixed dark theme `editorRuler.foreground` to match the indent guide background.
+
+## 0.6.2
+
+- Added Open VSX publishing to the release workflow, so releases now go to both the VS Code Marketplace and Open VSX.
+- Added an Open VSX badge to the README.
+
+## 0.6.1
+
+- Added diagnostic scrollbar/gutter marks and unnecessary-code fading to all 4 color theme variants.
+
 ## 0.6.0
 
 - Extended `Clay Terminal Icons` file icon theme with Elixir, Zig, Haskell, R, Solidity, Astro, and Prisma.

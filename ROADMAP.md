@@ -1,12 +1,14 @@
 # Roadmap
 
-Current state (v0.6.4): 4 color theme variants (dark, light, hc-black,
+Current state (v0.7.0): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks and
 unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
-product icon theme, and CI validation (`icons/validate_theme.py`) covering
-both icon themes' references and font paths, plus a regression guard
-asserting all 16 terminal ANSI colors stay defined in every color theme.
+product icon theme, a first-run "Get Started" walkthrough covering both
+icon theme pickers and the color theme picker, and CI validation
+(`icons/validate_theme.py`) covering both icon themes' references and font
+paths, plus a regression guard asserting all 16 terminal ANSI colors stay
+defined in every color theme.
 
 This file is read and updated by the automated release process (see
 `.github/workflows` and the `clay-terminal-auto-release` cloud routine).
@@ -52,13 +54,6 @@ The extension is currently pure declarative JSON — no `main` entry point or
 `activationEvents` in `package.json`, so nothing runs extension-host code
 today. That caps what's possible without adding a build step:
 
-- **Setup walkthrough** (`contributes.walkthroughs`) — a guided onboarding
-  page ("Set File Icon Theme" → "Set Product Icon Theme" → "Pick a color
-  variant") shown on first install. This is declarative, like themes and
-  icon themes — no JS/activation code needed. Directly addresses the
-  "installed but can't see the icons" confusion from earlier setup
-  sessions, where users didn't know both the icon theme *and* product icon
-  theme need to be selected separately.
 - **Extension pack recommendation** (`extensionPack` or
   `extensionRecommendations` in a workspace `.vscode/extensions.json`
   template) — suggest a ligature-font-friendly setup alongside the theme,
@@ -128,6 +123,19 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.7.0
+- Added a "Get Started with Clay Terminal" walkthrough
+  (`contributes.walkthroughs`): three steps — "Set File Icon Theme" →
+  "Set Product Icon Theme" → "Pick a Color Variant" — each with a command
+  button and a completion event tied to the matching setting. Purely
+  declarative, no `main`/`activationEvents` added. Directly addresses the
+  "installed but can't see the icons" confusion, since only the color
+  theme applies automatically on install.
+
+### v0.6.5
+- Backfilled `CHANGELOG.md` entries for 0.6.1-0.6.4, which had fallen
+  behind actual releases.
 
 ### v0.6.4
 - Terminal ANSI color regression guard: `icons/validate_theme.py` now

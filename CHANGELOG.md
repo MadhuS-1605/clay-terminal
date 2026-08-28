@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0
+
+- Added a "Get Started with Clay Terminal" walkthrough (`contributes.walkthroughs`), walking through setting the file icon theme, product icon theme, and color variant — addresses the "installed but can't see the icons" confusion, since only the color theme applies automatically on install.
+
+## 0.6.5
+
+- Backfilled changelog entries for 0.6.1-0.6.4.
+
 ## 0.6.4
 
 - Added a terminal ANSI color regression guard to `validate_theme.py`.

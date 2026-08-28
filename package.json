@@ -2,7 +2,7 @@
   "name": "cc-theme",
   "displayName": "Clay Terminal",
   "description": "A warm dark/light VS Code theme with a coral terminal-inspired accent.",
-  "version": "0.6.5",
+  "version": "0.7.0",
   "publisher": "astechlabs",
   "icon": "icon.png",
   "license": "MIT",
@@ -54,6 +54,42 @@
         "id": "clay-terminal-product-icons",
         "label": "Clay Terminal Icons",
         "path": "./themes/clay-product-icon-theme.json"
+      }
+    ],
+    "walkthroughs": [
+      {
+        "id": "clayTerminalSetup",
+        "title": "Get Started with Clay Terminal",
+        "description": "Turn on the matching file icons and product icons, and pick a color variant.",
+        "steps": [
+          {
+            "id": "setFileIconTheme",
+            "title": "Set File Icon Theme",
+            "description": "Clay Terminal Icons is a themed file icon set bundled in this extension, but it isn't applied automatically.\n[Set File Icon Theme](command:workbench.action.selectIconTheme)",
+            "media": {
+              "markdown": "walkthroughs/set-file-icon-theme.md"
+            },
+            "completionEvents": ["onSettingChanged:workbench.iconTheme"]
+          },
+          {
+            "id": "setProductIconTheme",
+            "title": "Set Product Icon Theme",
+            "description": "Themes the editor UI's own chevrons, folder, and git icons — set separately from the file icon theme.\n[Set Product Icon Theme](command:workbench.action.selectProductIconTheme)",
+            "media": {
+              "markdown": "walkthroughs/set-product-icon-theme.md"
+            },
+            "completionEvents": ["onSettingChanged:workbench.productIconTheme"]
+          },
+          {
+            "id": "pickColorTheme",
+            "title": "Pick a Color Variant",
+            "description": "Choose Clay Terminal, Clay Terminal Light, or a high-contrast variant.\n[Pick a Color Theme](command:workbench.action.selectTheme)",
+            "media": {
+              "markdown": "walkthroughs/pick-color-theme.md"
+            },
+            "completionEvents": ["onSettingChanged:workbench.colorTheme"]
+          }
+        ]
       }
     ]
   }

@@ -30,6 +30,8 @@ npx @vscode/vsce package
 
 Command Palette → **Extensions: Install from VSIX...** → select the generated file, reload VS Code, then Command Palette → **Preferences: Color Theme** to pick a color theme, **Preferences: File Icon Theme** → **Clay Terminal Icons** for the file icons, and **Preferences: Product Icon Theme** → **Clay Terminal Icons** for the UI glyphs. (None of these pickers have a default keybinding.)
 
+A **Get Started with Clay Terminal** walkthrough (Command Palette → **Welcome: Open Walkthrough...**) also walks through all three pickers — it's the fastest way to make sure both icon themes are actually turned on, since installing the extension only applies the color theme automatically.
+
 ## Recommended settings
 
 Optional `settings.json` tweaks that pair well with the coral accent and warm-gray palette:

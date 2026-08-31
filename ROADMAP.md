@@ -1,14 +1,17 @@
 # Roadmap
 
-Current state (v0.7.0): 4 color theme variants (dark, light, hc-black,
+Current state (v0.7.1): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks and
 unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
 product icon theme, a first-run "Get Started" walkthrough covering both
-icon theme pickers and the color theme picker, and CI validation
+icon theme pickers and the color theme picker, a single palette source
+(`icons/palette.py`) for the coral/warm-gray hex values shared by the
+icon generator and all 4 color themes, and CI validation
 (`icons/validate_theme.py`) covering both icon themes' references and font
-paths, plus a regression guard asserting all 16 terminal ANSI colors stay
-defined in every color theme.
+paths, a regression guard asserting all 16 terminal ANSI colors stay
+defined in every color theme, and a palette-drift guard asserting the
+coral/warm-gray colors stay present in every color theme.
 
 This file is read and updated by the automated release process (see
 `.github/workflows` and the `clay-terminal-auto-release` cloud routine).
@@ -72,17 +75,11 @@ VS Code's built-in terminal panel. Lives as generated config files, not as
 part of the `.vsix` — a VS Code extension can't install a shell config or a
 terminal emulator's preferences.
 
-- **Single palette source** — prerequisite for both items below: extract
-  the raw hex values currently duplicated across the 4 `themes/*.json`
-  files into one shared palette file (e.g. `icons/palette.py` or a JSON
-  constants file) that both `generate_icons.py` and the new
-  terminal/prompt generators read from. Do this first, before adding more
-  consumers of the palette.
 - **Terminal emulator color schemes** — a generator script (same pattern as
   `icons/generate_icons.py`) that derives `.itermcolors` (iTerm2),
   Windows Terminal `colorScheme` JSON, and Alacritty/Kitty TOML/conf output
-  from the single palette source. Ships as downloadable assets linked from
-  the README, not bundled in the extension package.
+  from `icons/palette.py`. Ships as downloadable assets linked from the
+  README, not bundled in the extension package.
 - **Shell prompt theme** — a Starship `starship.toml` preset (and
   optionally an Oh My Posh JSON / Powerlevel10k snippet) using the same
   coral accent (`#D97757`) and warm-gray neutrals for prompt segments.
@@ -123,6 +120,17 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.7.1
+- Added `icons/palette.py` as the single source of truth for the coral
+  accent (`#D97757`) and warm-gray neutral (`#C3C2B7`) hex values, which
+  were previously duplicated by hand across all 4 `themes/*.json` color
+  themes and hardcoded again in `icons/generate_icons.py`'s `CLAY`
+  constant. `generate_icons.py` now imports `CORAL_RGB` from it instead of
+  hardcoding the RGB tuple, and `icons/validate_theme.py` gained a check
+  that both palette colors actually appear in every color theme's
+  `colors` block, to catch drift. Prerequisite for the terminal-emulator
+  and shell-prompt generators later in this file.
 
 ### v0.7.0
 - Added a "Get Started with Clay Terminal" walkthrough

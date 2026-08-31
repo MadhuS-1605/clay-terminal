@@ -17,12 +17,14 @@ import os
 import subprocess
 import urllib.request
 
+from palette import CORAL_RGB
+
 SIZE = 128
 ROOT = os.path.dirname(os.path.abspath(__file__))
 THEME_PATH = os.path.join(ROOT, "..", "themes", "clay-icon-theme.json")
 CACHE_DIR = os.path.join(ROOT, ".cache")
 
-CLAY = (217, 119, 87)
+CLAY = CORAL_RGB
 CLAY_LIGHT = (240, 180, 140)
 WHITE = (255, 255, 255)
 

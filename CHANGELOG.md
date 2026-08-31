@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.1
+
+- Added `icons/palette.py` as the single source of truth for the coral accent (`#D97757`) and warm-gray neutral (`#C3C2B7`) hex values shared across all 4 `themes/*.json` color themes and `icons/generate_icons.py`. `icons/validate_theme.py` now checks both colors stay present in every color theme, to catch drift.
+
 ## 0.7.0
 
 - Added a "Get Started with Clay Terminal" walkthrough (`contributes.walkthroughs`), walking through setting the file icon theme, product icon theme, and color variant — addresses the "installed but can't see the icons" confusion, since only the color theme applies automatically on install.

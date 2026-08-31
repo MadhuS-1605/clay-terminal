@@ -7,8 +7,12 @@ import json
 import os
 import sys
 
+from palette import CORAL, WARM_GRAY
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 THEMES_DIR = os.path.join(ROOT, "..", "themes")
+
+PALETTE_COLORS = (CORAL, WARM_GRAY)
 
 REF_KEYS = (
     "fileExtensions", "fileNames", "folderNames", "folderNamesExpanded",
@@ -42,6 +46,11 @@ for name in sorted(os.listdir(THEMES_DIR)):
         for key in TERMINAL_ANSI_KEYS:
             if key not in colors:
                 errors.append(f"{name}: missing color theme key '{key}'")
+
+        used_hexes = {v[:7].upper() for v in colors.values() if isinstance(v, str) and v.startswith("#")}
+        for palette_color in PALETTE_COLORS:
+            if palette_color.upper() not in used_hexes:
+                errors.append(f"{name}: palette color '{palette_color}' (icons/palette.py) not used anywhere in colors block")
 
     if "iconDefinitions" not in data:
         continue  # color theme, not an icon theme

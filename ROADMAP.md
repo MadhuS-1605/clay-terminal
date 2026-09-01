@@ -1,6 +1,6 @@
 # Roadmap
 
-Current state (v0.7.1): 4 color theme variants (dark, light, hc-black,
+Current state (v0.7.2): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks and
 unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
@@ -89,26 +89,7 @@ terminal emulator's preferences.
 
 Not building formatters/linters from scratch — wiring in the established
 per-language tools and making VS Code's error/warning rendering match this
-theme's palette. Three pieces:
-
-- **Recommended formatter/linter pack** — a curated
-  `extensionRecommendations` list (Prettier for JS/TS/CSS/JSON, Black or
-  Ruff for Python, gofmt/`golang.go` for Go, rustfmt for Rust, etc.) plus
-  a documented `settings.json` snippet
-  (`editor.defaultFormatter`, `editor.formatOnSave`, per-language
-  `[python]`/`[go]` overrides) in the README. This is config/docs only —
-  no new code, just pointing users at the right existing extension per
-  language instead of reinventing formatting.
-- **Recommend Error Lens for full-line highlighting** — theme colors alone
-  can mark the gutter/scrollbar next to an error line, but a highlighted
-  *whole-line background* with the error message inline is a decoration,
-  not a static theme color; stock VS Code doesn't expose one. The
-  established tool for this is the Error Lens extension, which reads the
-  same `editorError`/`editorWarning` colors this theme already sets —
-  errors and warnings already use distinct hues (red vs. amber), so Error
-  Lens's line highlight, gutter mark, and scrollbar mark all inherit that
-  same red/amber split automatically. Add it to the recommended pack above
-  rather than building a custom decoration provider.
+theme's palette.
 
 ## Explicitly not planned
 
@@ -120,6 +101,15 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.7.2
+- Added a "Recommended extensions" section to the README: a curated
+  `.vscode/extensions.json` snippet (Prettier, Ruff, `golang.go`,
+  rust-analyzer, Error Lens) plus a matching `settings.json` snippet
+  (`editor.formatOnSave`, per-language `editor.defaultFormatter`
+  overrides). Config/docs only, no extension code. Also notes that Error
+  Lens's line/gutter/scrollbar marks inherit this theme's existing
+  `editorError`/`editorWarning` red/amber split automatically.
 
 ### v0.7.1
 - Added `icons/palette.py` as the single source of truth for the coral

@@ -50,3 +50,38 @@ Optional `settings.json` tweaks that pair well with the coral accent and warm-gr
 ```
 
 None of this is required — the themes and icon themes work with default settings.
+
+## Recommended extensions
+
+Not part of this theme, but pairs well with it — established per-language formatters/linters plus one extension that makes the theme's error/warning colors more visible:
+
+```jsonc
+// .vscode/extensions.json
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",   // Prettier — JS/TS/CSS/JSON
+    "charliermarsh.ruff",       // Ruff — Python lint + format
+    "golang.go",                // gofmt — Go
+    "rust-lang.rust-analyzer",  // rustfmt — Rust
+    "usernamehw.errorlens"      // inline error/warning highlighting
+  ]
+}
+```
+
+```jsonc
+// settings.json
+{
+  "editor.formatOnSave": true,
+  "[javascript][typescript][css][json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  }
+}
+```
+
+[Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) reads the same `editorError`/`editorWarning` colors this theme already sets, so its full-line highlight, gutter mark, and scrollbar mark inherit the theme's red/amber split automatically — no extra configuration needed.

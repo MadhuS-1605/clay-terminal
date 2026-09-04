@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.4
+
+- No functional changes. Verifies the CHANGELOG-update step added to the publish workflow in `CLAUDE.md`, after 0.7.2 and 0.7.3 shipped without a changelog entry.
+
 ## 0.7.3
 
 - Added a Starship prompt preset (`terminal/starship.toml`), generated from the shared coral/warm-gray palette via a new `icons/generate_starship.py` generator. Downloadable, not bundled in the `.vsix` — first item shipped under ROADMAP.md's "CLI / terminal theme support" section.

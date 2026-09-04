@@ -6,6 +6,8 @@ CLAUDE.md
 icons/generate_icons.py
 icons/product-icon-font.py
 icons/validate_theme.py
+icons/generate_starship.py
+terminal/**
 ROADMAP.md
 icons/.cache/**
 *.vsix

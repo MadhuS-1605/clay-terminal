@@ -85,3 +85,13 @@ Not part of this theme, but pairs well with it — established per-language form
 ```
 
 [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) reads the same `editorError`/`editorWarning` colors this theme already sets, so its full-line highlight, gutter mark, and scrollbar mark inherit the theme's red/amber split automatically — no extra configuration needed.
+
+## Shell prompt theme
+
+Not a VS Code setting — a [Starship](https://starship.rs) prompt preset for your actual terminal (integrated or standalone), using the same coral accent and warm-gray neutrals: [`terminal/starship.toml`](https://raw.githubusercontent.com/MadhuS-1605/clay-terminal/main/terminal/starship.toml).
+
+```sh
+curl -o ~/.config/starship.toml https://raw.githubusercontent.com/MadhuS-1605/clay-terminal/main/terminal/starship.toml
+```
+
+(Merge it by hand instead if you already have a `starship.toml` you want to keep.) Not bundled in the `.vsix` — a VS Code extension can't install a shell config for you.

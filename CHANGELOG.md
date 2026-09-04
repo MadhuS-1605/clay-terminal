@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.3
+
+- Added a Starship prompt preset (`terminal/starship.toml`), generated from the shared coral/warm-gray palette via a new `icons/generate_starship.py` generator. Downloadable, not bundled in the `.vsix` — first item shipped under ROADMAP.md's "CLI / terminal theme support" section.
+
+## 0.7.2
+
+- Added a "Recommended extensions" section to the README (Prettier, Ruff, `golang.go`, `rust-analyzer`, Error Lens), with a matching per-language default-formatter `settings.json` snippet.
+
 ## 0.7.1
 
 - Added `icons/palette.py` as the single source of truth for the coral accent (`#D97757`) and warm-gray neutral (`#C3C2B7`) hex values shared across all 4 `themes/*.json` color themes and `icons/generate_icons.py`. `icons/validate_theme.py` now checks both colors stay present in every color theme, to catch drift.

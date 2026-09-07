@@ -95,3 +95,14 @@ curl -o ~/.config/starship.toml https://raw.githubusercontent.com/MadhuS-1605/cl
 ```
 
 (Merge it by hand instead if you already have a `starship.toml` you want to keep.) Not bundled in the `.vsix` — a VS Code extension can't install a shell config for you.
+
+An [Oh My Posh](https://ohmyposh.dev) theme using the same palette is also available: [`terminal/ohmyposh.json`](https://raw.githubusercontent.com/MadhuS-1605/clay-terminal/main/terminal/ohmyposh.json).
+
+```sh
+curl -o ~/.config/ohmyposh/clay-terminal.json https://raw.githubusercontent.com/MadhuS-1605/clay-terminal/main/terminal/ohmyposh.json
+oh-my-posh init pwsh --config ~/.config/ohmyposh/clay-terminal.json | Invoke-Expression  # PowerShell
+# oh-my-posh init bash --config ~/.config/ohmyposh/clay-terminal.json  # bash — add to ~/.bashrc
+# oh-my-posh init zsh --config ~/.config/ohmyposh/clay-terminal.json   # zsh — add to ~/.zshrc
+```
+
+Also not bundled in the `.vsix` for the same reason as the Starship preset.

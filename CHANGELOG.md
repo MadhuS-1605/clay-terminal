@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.5
+
+- Added an Oh My Posh (https://ohmyposh.dev) prompt theme (`terminal/ohmyposh.json`), generated from the shared coral/warm-gray palette via a new `icons/generate_ohmyposh.py` generator, following the same pattern as the Starship preset. Downloadable, not bundled in the `.vsix` — second item shipped under ROADMAP.md's "CLI / terminal theme support" section.
+
 ## 0.7.4
 
 - No functional changes. Verifies the CHANGELOG-update step added to the publish workflow in `CLAUDE.md`, after 0.7.2 and 0.7.3 shipped without a changelog entry.

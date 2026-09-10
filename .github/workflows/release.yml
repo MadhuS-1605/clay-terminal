@@ -23,8 +23,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag "${{ inputs.tag }}"
-          git push origin "${{ inputs.tag }}"
+          if git ls-remote --exit-code --tags origin "refs/tags/${{ inputs.tag }}" > /dev/null; then
+            echo "Tag ${{ inputs.tag }} already exists on origin, skipping (retry of a partially failed release)."
+          else
+            git tag "${{ inputs.tag }}"
+            git push origin "${{ inputs.tag }}"
+          fi
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -39,6 +43,15 @@ jobs:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
       - name: Publish to Open VSX
         if: always()
-        run: npx ovsx publish
+        run: |
+          set +e
+          output=$(npx ovsx publish 2>&1)
+          status=$?
+          echo "$output"
+          if [ $status -ne 0 ] && echo "$output" | grep -qi "already"; then
+            echo "Version already published to Open VSX, treating as success (retry of a partially failed release)."
+            exit 0
+          fi
+          exit $status
         env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}

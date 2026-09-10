@@ -106,3 +106,9 @@ oh-my-posh init pwsh --config ~/.config/ohmyposh/clay-terminal.json | Invoke-Exp
 ```
 
 Also not bundled in the `.vsix` for the same reason as the Starship preset.
+
+## Terminal emulator color scheme
+
+A [Windows Terminal](https://learn.microsoft.com/windows/terminal/customize-settings/color-schemes) color scheme using the same palette, generated from the dark theme's own ANSI colors: [`terminal/windows-terminal.json`](https://raw.githubusercontent.com/MadhuS-1605/clay-terminal/main/terminal/windows-terminal.json).
+
+Paste its contents into the `schemes` array of Windows Terminal's `settings.json` (Command Palette in Windows Terminal → **Open JSON file**), then set `"colorScheme": "Clay Terminal"` on the profile you want it applied to. Not bundled in the `.vsix` for the same reason as the shell prompt presets above — more formats (iTerm2, Alacritty, Kitty) are planned.

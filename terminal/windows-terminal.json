@@ -1,0 +1,23 @@
+{
+  "name": "Clay Terminal",
+  "black": "#1a1a19",
+  "brightBlack": "#898781",
+  "red": "#d03b3b",
+  "brightRed": "#ec7e7e",
+  "green": "#0ca30c",
+  "brightGreen": "#5cc95c",
+  "yellow": "#db9300",
+  "brightYellow": "#fab219",
+  "blue": "#6da7ec",
+  "brightBlue": "#2a78d6",
+  "purple": "#a096eb",
+  "brightPurple": "#cbcadb",
+  "cyan": "#629987",
+  "brightCyan": "#bcd1ca",
+  "white": "#e4e3dd",
+  "brightWhite": "#ffffff",
+  "background": "#1a1a19",
+  "foreground": "#e4e3dd",
+  "cursorColor": "#d97757",
+  "selectionBackground": "#26261f"
+}

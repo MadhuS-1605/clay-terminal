@@ -9,6 +9,7 @@ icons/validate_theme.py
 icons/generate_starship.py
 icons/generate_ohmyposh.py
 icons/generate_windows_terminal.py
+icons/generate_itermcolors.py
 terminal/**
 ROADMAP.md
 icons/.cache/**

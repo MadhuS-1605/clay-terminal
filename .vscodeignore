@@ -10,6 +10,7 @@ icons/generate_starship.py
 icons/generate_ohmyposh.py
 icons/generate_windows_terminal.py
 icons/generate_itermcolors.py
+icons/generate_alacritty.py
 terminal/**
 ROADMAP.md
 icons/.cache/**

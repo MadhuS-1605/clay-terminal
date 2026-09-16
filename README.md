@@ -111,7 +111,7 @@ Also not bundled in the `.vsix` for the same reason as the Starship preset.
 
 A [Windows Terminal](https://learn.microsoft.com/windows/terminal/customize-settings/color-schemes) color scheme using the same palette, generated from the dark theme's own ANSI colors: [`terminal/windows-terminal.json`](https://raw.githubusercontent.com/MadhuS-1605/clay-terminal/main/terminal/windows-terminal.json).
 
-Paste its contents into the `schemes` array of Windows Terminal's `settings.json` (Command Palette in Windows Terminal → **Open JSON file**), then set `"colorScheme": "Clay Terminal"` on the profile you want it applied to. Not bundled in the `.vsix` for the same reason as the shell prompt presets above — Alacritty/Kitty formats are still planned.
+Paste its contents into the `schemes` array of Windows Terminal's `settings.json` (Command Palette in Windows Terminal → **Open JSON file**), then set `"colorScheme": "Clay Terminal"` on the profile you want it applied to. Not bundled in the `.vsix` for the same reason as the shell prompt presets above — a Kitty format is still planned.
 
 An [iTerm2](https://iterm2.com) color preset generated the same way is also available: [`terminal/clay-terminal.itermcolors`](https://raw.githubusercontent.com/MadhuS-1605/clay-terminal/main/terminal/clay-terminal.itermcolors).
 
@@ -120,3 +120,11 @@ curl -o ~/Downloads/clay-terminal.itermcolors https://raw.githubusercontent.com/
 ```
 
 Then in iTerm2: **Preferences → Profiles → Colors → Color Presets... → Import...**, select the downloaded file, then choose **Clay Terminal** from the same Color Presets menu to apply it. Also not bundled in the `.vsix`.
+
+An [Alacritty](https://alacritty.org) color scheme generated the same way is also available: [`terminal/alacritty.toml`](https://raw.githubusercontent.com/MadhuS-1605/clay-terminal/main/terminal/alacritty.toml).
+
+```sh
+curl -o ~/.config/alacritty/clay-terminal.toml https://raw.githubusercontent.com/MadhuS-1605/clay-terminal/main/terminal/alacritty.toml
+```
+
+Then add `general.import = ["~/.config/alacritty/clay-terminal.toml"]` to your `alacritty.toml` (or merge the `[colors.*]` tables by hand if you already import other files). Also not bundled in the `.vsix`.

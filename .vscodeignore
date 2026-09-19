@@ -11,6 +11,7 @@ icons/generate_ohmyposh.py
 icons/generate_windows_terminal.py
 icons/generate_itermcolors.py
 icons/generate_alacritty.py
+icons/generate_kitty.py
 terminal/**
 ROADMAP.md
 icons/.cache/**

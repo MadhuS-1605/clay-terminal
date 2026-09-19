@@ -38,7 +38,31 @@ jobs:
         with:
           node-version: 20
       - name: Publish to VS Code Marketplace
-        run: npx @vscode/vsce publish
+        run: |
+          set +e
+          max_attempts=3
+          delay=30
+          attempt=1
+          while [ $attempt -le $max_attempts ]; do
+            output=$(npx @vscode/vsce publish 2>&1)
+            status=$?
+            echo "$output"
+            if [ $status -eq 0 ]; then
+              exit 0
+            fi
+            if echo "$output" | grep -qi "already published"; then
+              echo "Version already published to the Marketplace, treating as success (retry of a partially failed release)."
+              exit 0
+            fi
+            if [ $attempt -lt $max_attempts ]; then
+              echo "Marketplace publish failed (attempt $attempt/$max_attempts), retrying in ${delay}s..."
+              sleep $delay
+              delay=$((delay * 2))
+            fi
+            attempt=$((attempt + 1))
+          done
+          echo "Marketplace publish failed after $max_attempts attempts."
+          exit $status
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
       - name: Publish to Open VSX

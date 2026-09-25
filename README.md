@@ -39,6 +39,7 @@ Optional `settings.json` tweaks that pair well with the coral accent and warm-gr
 ```jsonc
 {
   "editor.fontFamily": "'JetBrains Mono', 'Berkeley Mono', Menlo, monospace",
+  "editor.fontLigatures": true,
   "editor.cursorStyle": "line",
   "editor.cursorBlinking": "solid",
   "editor.minimap.enabled": false,
@@ -49,7 +50,7 @@ Optional `settings.json` tweaks that pair well with the coral accent and warm-gr
 }
 ```
 
-None of this is required — the themes and icon themes work with default settings.
+None of this is required — the themes and icon themes work with default settings. `editor.fontLigatures` is worth turning on specifically with JetBrains Mono or Berkeley Mono, since both ship arrow/comparison ligatures (`=>`, `!=`, `>=`) — it's a no-op with fonts that don't include ligature glyphs.
 
 ## Recommended extensions
 

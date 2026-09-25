@@ -64,10 +64,6 @@ The extension is currently pure declarative JSON — no `main` entry point or
 `activationEvents` in `package.json`, so nothing runs extension-host code
 today. That caps what's possible without adding a build step:
 
-- **Extension pack recommendation** (`extensionPack` or
-  `extensionRecommendations` in a workspace `.vscode/extensions.json`
-  template) — suggest a ligature-font-friendly setup alongside the theme,
-  the way Material Theme and One Dark Pro do. Doc/config only.
 - **Command + status bar theme switcher (needs go-ahead)**
   (`contributes.commands` + `StatusBarItem`) — a quick command to cycle
   dark/light/hc variants. This *does* require adding a real activation
@@ -98,6 +94,15 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.7.11
+- Shipped the ligature-font-friendly half of the "Extension pack
+  recommendation" item: added `editor.fontLigatures: true` to the README's
+  "Recommended settings" snippet, with a note that JetBrains Mono/Berkeley
+  Mono (already recommended there) ship ligature glyphs for `=>`, `!=`,
+  `>=` and similar. The `.vscode/extensions.json` half of that item was
+  already covered by the "Recommended extensions" section added in v0.7.2,
+  so the roadmap item is now fully shipped. Doc/config only, no code.
 
 ### v0.7.10
 - Added a Powerlevel10k color override (`terminal/p10k-clay-terminal.zsh`),

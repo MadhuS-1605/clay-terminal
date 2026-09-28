@@ -1,6 +1,6 @@
 # Roadmap
 
-Current state (v0.7.10): 4 color theme variants (dark, light, hc-black,
+Current state (v0.7.12): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks and
 unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
@@ -94,6 +94,22 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.7.12
+- Added `editorOverviewRuler.infoForeground` (scrollbar mark for info-level
+  diagnostics) to all 4 color theme variants, matching each theme's existing
+  `editorInfo.foreground`. Grounded find for this cycle: the near-term and
+  mid/long-term roadmap items were all either tagged (needs go-ahead) or
+  required a human (the icon-theme screenshot), so the repo's own color
+  theme JSON was checked against VS Code's actual theme-color set instead.
+  The v0.6.1 "diagnostic color polish" pass added `editorOverviewRuler.
+  errorForeground`/`.warningForeground` (mirroring `editorError.foreground`/
+  `editorWarning.foreground`) but missed the info-level counterpart, even
+  though `editorInfo.foreground` itself was already set — confirmed via
+  VS Code's source that `editorOverviewRuler.infoForeground` is a real,
+  documented color id and that no gutter equivalent exists for info
+  (`editorGutter.infoBackground` isn't a real VS Code color, unlike the
+  error/warning gutter colors), so gutter marks are correctly left as-is.
 
 ### v0.7.11
 - Shipped the ligature-font-friendly half of the "Extension pack

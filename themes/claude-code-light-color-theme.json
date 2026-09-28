@@ -27,6 +27,7 @@
     "editorHint.foreground": "#3f7562",
     "editorOverviewRuler.errorForeground": "#b93535",
     "editorOverviewRuler.warningForeground": "#92400e",
+    "editorOverviewRuler.infoForeground": "#184f95",
     "editorGutter.addedBackground": "#1a8633",
     "editorGutter.modifiedBackground": "#92400e",
     "editorGutter.deletedBackground": "#b93535",
@@ -463,9 +464,6 @@
       "foreground": "#7b7974",
       "italic": true
     },
-    "string": "#2a7a2a",
-    "number": "#9a6a44",
-    "decorator": "#615ba0",
-    "macro": "#615ba0"
+    "string": "#2a7a2a"
   }
 }

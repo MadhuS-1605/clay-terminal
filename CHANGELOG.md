@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.12
+
+- Added `editorOverviewRuler.infoForeground` (scrollbar mark for info-level diagnostics) to all 4 color theme variants, set to the same color as each theme's existing `editorInfo.foreground` — following the same pattern already used for `editorOverviewRuler.errorForeground`/`.warningForeground` (mirroring `editorError.foreground`/`editorWarning.foreground`) added in 0.6.1. That earlier pass covered error and warning scrollbar marks but missed info; VS Code doesn't have an info-level gutter color (only error/warning gutter marks exist in its theme API), so gutter marks are unaffected. Color-theme JSON only, no code.
+
 ## 0.7.11
 
 - Added `editor.fontLigatures: true` to the README's "Recommended settings" snippet, with a note that JetBrains Mono/Berkeley Mono (already recommended there) ship ligature glyphs for `=>`, `!=`, `>=` and similar. Doc/config only. Ships the "Extension pack recommendation" item under ROADMAP.md's "Features beyond color/icons" section — the ligature-font-friendly setup half of it; the `.vscode/extensions.json` half was already covered by the "Recommended extensions" section added in 0.7.2.

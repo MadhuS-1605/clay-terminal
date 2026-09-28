@@ -29,6 +29,7 @@
     "editorHint.foreground": "#3f7562",
     "editorOverviewRuler.errorForeground": "#b93535",
     "editorOverviewRuler.warningForeground": "#8a5a00",
+    "editorOverviewRuler.infoForeground": "#184f95",
     "editorGutter.addedBackground": "#1a8633",
     "editorGutter.modifiedBackground": "#8a5a00",
     "editorGutter.deletedBackground": "#b93535",

@@ -464,6 +464,9 @@
       "foreground": "#7b7974",
       "italic": true
     },
-    "string": "#2a7a2a"
+    "string": "#2a7a2a",
+    "number": "#9a6a44",
+    "decorator": "#615ba0",
+    "macro": "#615ba0"
   }
 }

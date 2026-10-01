@@ -1,9 +1,9 @@
 # Roadmap
 
-Current state (v0.7.12): 4 color theme variants (dark, light, hc-black,
+Current state (v0.7.13): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
-notification/debug/problems colors, diagnostic scrollbar/gutter marks and
-unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
+notification/debug/problems colors, diagnostic scrollbar/gutter marks,
+quick-fix lightbulb colors, and unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
 product icon theme, a first-run "Get Started" walkthrough covering both
 icon theme pickers and the color theme picker, a single palette source
 (`icons/palette.py`) for the coral/warm-gray hex values shared by the
@@ -82,7 +82,9 @@ terminal emulator's preferences. All items shipped — see Shipped below.
 
 Not building formatters/linters from scratch — wiring in the established
 per-language tools and making VS Code's error/warning rendering match this
-theme's palette.
+theme's palette. Quick-fix lightbulb colors shipped in v0.7.13; inlay hint
+colors (`editorInlayHint.*`, shown by TS/Python/Rust-analyzer for inferred
+types and parameter names) remain a grounded gap for a later cycle.
 
 ## Explicitly not planned
 
@@ -94,6 +96,19 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.7.13
+- Added `editorLightBulb.foreground` and `editorLightBulbAutoFix.foreground`
+  (the quick-fix lightbulb icon shown when a linter/formatter/language
+  server offers a code action) to all 4 color theme variants, reusing each
+  theme's existing `editorWarning.foreground`/`editorInfo.foreground`
+  values respectively, matching VS Code's own default semantic split
+  (plain suggestion vs. auto-fixable) without introducing new hex values.
+  Grounded find for this cycle: the near-term and mid/long-term roadmap
+  items were all either tagged (needs go-ahead) or required a human (the
+  icon-theme screenshot), so the theme JSON was checked against VS Code's
+  full color-theme key set again — these two keys were a real gap directly
+  under the previously-empty "Language tooling integration" section.
 
 ### v0.7.12
 - Added `editorOverviewRuler.infoForeground` (scrollbar mark for info-level

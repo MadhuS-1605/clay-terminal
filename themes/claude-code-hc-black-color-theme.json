@@ -27,6 +27,8 @@
     "editorWarning.foreground": "#fab219",
     "editorInfo.foreground": "#6da7ec",
     "editorHint.foreground": "#bcd1ca",
+    "editorLightBulb.foreground": "#fab219",
+    "editorLightBulbAutoFix.foreground": "#6da7ec",
     "editorOverviewRuler.errorForeground": "#ec7e7e",
     "editorOverviewRuler.warningForeground": "#fab219",
     "editorOverviewRuler.infoForeground": "#6da7ec",

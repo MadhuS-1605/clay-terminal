@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.13
+
+- Added `editorLightBulb.foreground` and `editorLightBulbAutoFix.foreground` (the quick-fix lightbulb icon colors shown by linters/formatters/language servers offering code actions) to all 4 color theme variants, reusing each theme's existing `editorWarning.foreground`/`editorInfo.foreground` values respectively — matching VS Code's own default semantic split (plain suggestion vs. auto-fixable) without introducing new hex values. Grounded find for this cycle: the active roadmap sections were all either tagged (needs go-ahead) or needed a human (the icon-theme screenshot), so the theme JSON was checked against VS Code's full color-theme key set again, same as the 0.7.12 cycle; the lightbulb colors stood out as a real gap directly under the still-open "Language tooling integration" roadmap section, which had no concrete items yet. Color-theme JSON only, no code.
+
 ## 0.7.12
 
 - Added `editorOverviewRuler.infoForeground` (scrollbar mark for info-level diagnostics) to all 4 color theme variants, set to the same color as each theme's existing `editorInfo.foreground` — following the same pattern already used for `editorOverviewRuler.errorForeground`/`.warningForeground` (mirroring `editorError.foreground`/`editorWarning.foreground`) added in 0.6.1. That earlier pass covered error and warning scrollbar marks but missed info; VS Code doesn't have an info-level gutter color (only error/warning gutter marks exist in its theme API), so gutter marks are unaffected. Color-theme JSON only, no code.

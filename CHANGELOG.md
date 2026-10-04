@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.14
+
+- Added `editorInlayHint.foreground`, `editorInlayHint.background`, `editorInlayHint.typeForeground`, and `editorInlayHint.parameterForeground` (the inline type/parameter-name hints shown by TS/Python/Rust-analyzer) to all 4 color theme variants. Reused each theme's existing muted foreground for the general hint text, existing type/class semantic color for `typeForeground`, and existing parameter semantic color for `parameterForeground`, with a translucent badge background built from the theme's own `editorLineNumber.foreground` hex plus alpha — no new hex values introduced. Grounded find for this cycle: `editorInlayHint.*` was flagged as a real gap in ROADMAP.md's "Language tooling integration" section after the 0.7.13 cycle, confirmed via `grep -i inlayHint` across all 4 theme JSON files finding none. Color-theme JSON only, no code.
+
 ## 0.7.13
 
 - Added `editorLightBulb.foreground` and `editorLightBulbAutoFix.foreground` (the quick-fix lightbulb icon colors shown by linters/formatters/language servers offering code actions) to all 4 color theme variants, reusing each theme's existing `editorWarning.foreground`/`editorInfo.foreground` values respectively — matching VS Code's own default semantic split (plain suggestion vs. auto-fixable) without introducing new hex values. Grounded find for this cycle: the active roadmap sections were all either tagged (needs go-ahead) or needed a human (the icon-theme screenshot), so the theme JSON was checked against VS Code's full color-theme key set again, same as the 0.7.12 cycle; the lightbulb colors stood out as a real gap directly under the still-open "Language tooling integration" roadmap section, which had no concrete items yet. Color-theme JSON only, no code.

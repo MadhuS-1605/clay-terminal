@@ -5,7 +5,7 @@
 [![Rating](https://vsmarketplacebadges.dev/rating-short/astechlabs.cc-theme.svg)](https://marketplace.visualstudio.com/items?itemName=astechlabs.cc-theme)
 [![Open VSX](https://img.shields.io/open-vsx/v/astechlabs/cc-theme?label=open%20vsx)](https://open-vsx.org/extension/astechlabs/cc-theme)
 
-VS Code color themes inspired by a coral terminal aesthetic — dark and light variants, built from real warm-gray/coral design tokens. Coral accent (`#D97757`), semantic highlighting, bracket-pair colors, diff/merge colors, consistent error/warning/info marks across the squiggle, gutter (error/warning), scrollbar, and quick-fix lightbulb.
+VS Code color themes inspired by a coral terminal aesthetic — dark and light variants, built from real warm-gray/coral design tokens. Coral accent (`#D97757`), semantic highlighting, bracket-pair colors, diff/merge colors, consistent error/warning/info marks across the squiggle, gutter (error/warning), scrollbar, quick-fix lightbulb, and inlay hints.
 
 - **Clay Terminal** — dark, near-black warm background
 - **Clay Terminal Light** — light, warm off-white background

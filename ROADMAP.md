@@ -1,9 +1,9 @@
 # Roadmap
 
-Current state (v0.7.13): 4 color theme variants (dark, light, hc-black,
+Current state (v0.7.14): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks,
-quick-fix lightbulb colors, and unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
+quick-fix lightbulb colors, inlay hint colors, and unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
 product icon theme, a first-run "Get Started" walkthrough covering both
 icon theme pickers and the color theme picker, a single palette source
 (`icons/palette.py`) for the coral/warm-gray hex values shared by the
@@ -83,8 +83,8 @@ terminal emulator's preferences. All items shipped — see Shipped below.
 Not building formatters/linters from scratch — wiring in the established
 per-language tools and making VS Code's error/warning rendering match this
 theme's palette. Quick-fix lightbulb colors shipped in v0.7.13; inlay hint
-colors (`editorInlayHint.*`, shown by TS/Python/Rust-analyzer for inferred
-types and parameter names) remain a grounded gap for a later cycle.
+colors shipped in v0.7.14. All grounded gaps in this section are now
+shipped.
 
 ## Explicitly not planned
 
@@ -96,6 +96,22 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.7.14
+- Added `editorInlayHint.foreground`, `editorInlayHint.background`,
+  `editorInlayHint.typeForeground`, and `editorInlayHint.parameterForeground`
+  (the inlay hints TS/Python/Rust-analyzer show inline for inferred types and
+  parameter names) to all 4 color theme variants. Reused each theme's
+  existing muted foreground (`descriptionForeground`'s hex) for the general
+  hint text, its existing type/class semantic color for `typeForeground`,
+  and its existing parameter semantic color for `parameterForeground`, with
+  a translucent badge background built from the theme's own
+  `editorLineNumber.foreground` hex plus alpha — no new hex values
+  introduced. Grounded find for this cycle: the "Language tooling
+  integration" section explicitly flagged `editorInlayHint.*` as a real,
+  checked-for gap (confirmed via `grep -i inlayHint` across all 4 theme
+  JSON files, which found none) left over from the v0.7.13 cycle, and it
+  wasn't tagged (needs go-ahead).
 
 ### v0.7.13
 - Added `editorLightBulb.foreground` and `editorLightBulbAutoFix.foreground`

@@ -193,7 +193,27 @@
     "debugIcon.breakpointDisabledForeground": "#a5a49a",
     "problemsErrorIcon.foreground": "#b93535",
     "problemsWarningIcon.foreground": "#92400e",
-    "problemsInfoIcon.foreground": "#184f95"
+    "problemsInfoIcon.foreground": "#184f95",
+    "symbolIcon.classForeground": "#3f7562",
+    "symbolIcon.interfaceForeground": "#3f7562",
+    "symbolIcon.structForeground": "#3f7562",
+    "symbolIcon.enumeratorForeground": "#3f7562",
+    "symbolIcon.enumeratorMemberForeground": "#9a6a44",
+    "symbolIcon.functionForeground": "#8a5a1e",
+    "symbolIcon.methodForeground": "#8a5a1e",
+    "symbolIcon.constructorForeground": "#8a5a1e",
+    "symbolIcon.namespaceForeground": "#3f7562",
+    "symbolIcon.moduleForeground": "#3f7562",
+    "symbolIcon.packageForeground": "#3f7562",
+    "symbolIcon.typeParameterForeground": "#3f7562",
+    "symbolIcon.variableForeground": "#0b0b0b",
+    "symbolIcon.constantForeground": "#383835",
+    "symbolIcon.propertyForeground": "#5b5a8a",
+    "symbolIcon.fieldForeground": "#5b5a8a",
+    "symbolIcon.keywordForeground": "#c6613f",
+    "symbolIcon.operatorForeground": "#c6613f",
+    "symbolIcon.stringForeground": "#2a7a2a",
+    "symbolIcon.numberForeground": "#9a6a44"
   },
   "tokenColors": [
     {

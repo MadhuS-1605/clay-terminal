@@ -179,7 +179,27 @@
     "debugIcon.breakpointDisabledForeground": "#c3c2b7",
     "problemsErrorIcon.foreground": "#ec7e7e",
     "problemsWarningIcon.foreground": "#fab219",
-    "problemsInfoIcon.foreground": "#6da7ec"
+    "problemsInfoIcon.foreground": "#6da7ec",
+    "symbolIcon.classForeground": "#bcd1ca",
+    "symbolIcon.interfaceForeground": "#bcd1ca",
+    "symbolIcon.structForeground": "#bcd1ca",
+    "symbolIcon.enumeratorForeground": "#bcd1ca",
+    "symbolIcon.enumeratorMemberForeground": "#ebc9b7",
+    "symbolIcon.functionForeground": "#f0cf99",
+    "symbolIcon.methodForeground": "#f0cf99",
+    "symbolIcon.constructorForeground": "#f0cf99",
+    "symbolIcon.namespaceForeground": "#bcd1ca",
+    "symbolIcon.moduleForeground": "#bcd1ca",
+    "symbolIcon.packageForeground": "#bcd1ca",
+    "symbolIcon.typeParameterForeground": "#bcd1ca",
+    "symbolIcon.variableForeground": "#ffffff",
+    "symbolIcon.constantForeground": "#e4e3dd",
+    "symbolIcon.propertyForeground": "#cbcadb",
+    "symbolIcon.fieldForeground": "#cbcadb",
+    "symbolIcon.keywordForeground": "#f0a878",
+    "symbolIcon.operatorForeground": "#f0a878",
+    "symbolIcon.stringForeground": "#a8d98a",
+    "symbolIcon.numberForeground": "#ebc9b7"
   },
   "tokenColors": [
     {

@@ -1,9 +1,10 @@
 # Roadmap
 
-Current state (v0.7.14): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.0): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks,
-quick-fix lightbulb colors, inlay hint colors, and unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
+quick-fix lightbulb colors, inlay hint colors, symbol icon colors (Outline/
+breadcrumbs/suggest widget), and unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
 product icon theme, a first-run "Get Started" walkthrough covering both
 icon theme pickers and the color theme picker, a single palette source
 (`icons/palette.py`) for the coral/warm-gray hex values shared by the
@@ -96,6 +97,26 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.0
+- Added `symbolIcon.*` colors (20 keys: class/interface/struct/enumerator/
+  enumeratorMember/function/method/constructor/namespace/module/package/
+  typeParameter/variable/constant/property/field/keyword/operator/string/
+  number) to all 4 color theme variants — these color the symbol-kind icons
+  in the Outline view, breadcrumbs, and the suggest/autocomplete widget.
+  Each key reuses that theme's existing semantic-token color for the
+  matching construct, grouping related kinds onto their nearest semantic
+  cousin (struct/enumerator → the theme's type color, module/package → its
+  namespace color) — no new hex values introduced. Grounded find for this
+  cycle: the active roadmap sections were all either tagged (needs
+  go-ahead) or required a human (the icon-theme screenshot), so the theme
+  JSON was checked against VS Code's full color-theme key set again, same
+  as the v0.7.12-v0.7.14 cycles — `grep -ic symbolIcon` across all 4 theme
+  JSON files found zero matches. Kinds without a clean existing semantic
+  match (array, boolean, color, event, file, folder, key, null, object,
+  reference, snippet, text, unit) were left unset rather than inventing new
+  design decisions for them — a future cycle can revisit if a clear mapping
+  emerges.
 
 ### v0.7.14
 - Added `editorInlayHint.foreground`, `editorInlayHint.background`,

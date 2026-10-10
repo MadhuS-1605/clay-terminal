@@ -199,7 +199,14 @@
     "symbolIcon.keywordForeground": "#9a4a28",
     "symbolIcon.operatorForeground": "#9a4a28",
     "symbolIcon.stringForeground": "#0b6b1e",
-    "symbolIcon.numberForeground": "#8a5a1e"
+    "symbolIcon.numberForeground": "#8a5a1e",
+    "textLink.foreground": "#a94f31",
+    "textLink.activeForeground": "#7a3820",
+    "textPreformat.foreground": "#0b6b1e",
+    "textBlockQuote.background": "#c3c2b7",
+    "textBlockQuote.border": "#a94f31",
+    "textCodeBlock.background": "#c3c2b7",
+    "textSeparator.foreground": "#c3c2b7"
   },
   "tokenColors": [
     {

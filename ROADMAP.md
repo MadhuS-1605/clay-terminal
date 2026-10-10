@@ -1,10 +1,12 @@
 # Roadmap
 
-Current state (v0.8.0): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.1): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks,
 quick-fix lightbulb colors, inlay hint colors, symbol icon colors (Outline/
-breadcrumbs/suggest widget), and unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
+breadcrumbs/suggest widget), themed Markdown preview/walkthrough text colors
+(links, inline code, block quotes, code fences, separators), and
+unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
 product icon theme, a first-run "Get Started" walkthrough covering both
 icon theme pickers and the color theme picker, a single palette source
 (`icons/palette.py`) for the coral/warm-gray hex values shared by the
@@ -97,6 +99,26 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.1
+- Added `textLink.foreground`, `textLink.activeForeground`,
+  `textPreformat.foreground`, `textBlockQuote.background`,
+  `textBlockQuote.border`, `textCodeBlock.background`, and
+  `textSeparator.foreground` (Markdown preview and walkthrough text colors —
+  links, inline code, block quotes, code fences, horizontal rules) to all 4
+  color theme variants. Reused each theme's existing `button.background`/
+  `button.hoverBackground` for the link pair, `symbolIcon.stringForeground`
+  for inline code, `editorIndentGuide.background1` for blockquote/code-fence
+  backgrounds, `button.background` again for the blockquote border, and
+  `editorRuler.foreground` for the separator — no new hex values introduced.
+  Grounded find for this cycle: the active roadmap sections were all either
+  tagged (needs go-ahead) or required a human (the icon-theme screenshot),
+  so the theme JSON was checked against VS Code's full color-theme key set
+  again, same as the v0.7.12-v0.8.0 cycles — a grep for `textLink`/
+  `textPreformat`/`textBlockQuote`/`textCodeBlock`/`textSeparator` across all
+  4 theme JSON files found zero matches. These colors are directly visible
+  given the extension's own walkthrough (shipped in v0.7.0) renders Markdown
+  content through them.
 
 ### v0.8.0
 - Added `symbolIcon.*` colors (20 keys: class/interface/struct/enumerator/

@@ -1,10 +1,12 @@
 # Roadmap
 
-Current state (v0.8.1): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.2): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks,
 quick-fix lightbulb colors, inlay hint colors, symbol icon colors (Outline/
-breadcrumbs/suggest widget), themed Markdown preview/walkthrough text colors
+breadcrumbs/suggest widget), a themed autocomplete/suggest widget (chrome:
+background, border, selection, matched-text highlight), themed Markdown
+preview/walkthrough text colors
 (links, inline code, block quotes, code fences, separators), and
 unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
 product icon theme, a first-run "Get Started" walkthrough covering both
@@ -99,6 +101,23 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.2
+- Added `editorSuggestWidget.*` (background, border, foreground,
+  selectedBackground, selectedForeground, selectedIconForeground,
+  highlightForeground, focusHighlightForeground) to all 4 color theme
+  variants — the autocomplete/IntelliSense popup's own chrome, as opposed
+  to the symbol-kind icon colors inside it added in v0.8.0. Reused each
+  theme's existing `dropdown.background`/`.border`, `foreground`,
+  `list.activeSelectionBackground`/`.activeSelectionForeground`, and
+  `button.background` (coral) for the matched-character highlight — no new
+  hex values introduced. Grounded find for this cycle: the active roadmap
+  sections were all either tagged (needs go-ahead) or required a human
+  (the icon-theme screenshot), so the theme JSON was checked against VS
+  Code's full color-theme key set again, same as the v0.7.12-v0.8.1
+  cycles — `grep -ri editorSuggestWidget` across all 4 theme JSON files
+  found zero matches, a gap directly adjacent to the v0.8.0 symbolIcon
+  work (the widget's icons were themed, its own chrome wasn't).
 
 ### v0.8.1
 - Added `textLink.foreground`, `textLink.activeForeground`,

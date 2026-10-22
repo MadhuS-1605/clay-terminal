@@ -1,11 +1,12 @@
 # Roadmap
 
-Current state (v0.8.2): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.3): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks,
 quick-fix lightbulb colors, inlay hint colors, symbol icon colors (Outline/
 breadcrumbs/suggest widget), a themed autocomplete/suggest widget (chrome:
-background, border, selection, matched-text highlight), themed Markdown
+background, border, selection, matched-text highlight), a themed
+integrated terminal panel (border, text-selection color), themed Markdown
 preview/walkthrough text colors
 (links, inline code, block quotes, code fences, separators), and
 unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
@@ -101,6 +102,23 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.3
+- Added `terminal.border` and `terminal.selectionBackground` to all 4 color
+  theme variants — the integrated terminal panel (this extension's own
+  namesake surface) had no border or selection color set, falling back to
+  VS Code's generic defaults instead of the coral/warm-gray palette. Reused
+  each theme's existing `panel.border` for the terminal border and existing
+  `editor.selectionBackground` for the terminal selection — no new hex
+  values introduced. Grounded find for this cycle: the active roadmap
+  sections were all either tagged (needs go-ahead) or required a human (the
+  icon-theme screenshot), so the theme JSON was checked against VS Code's
+  full color-theme key set again, same as the v0.7.12-v0.8.2 cycles —
+  `grep -o "\"terminal[^\"]*\""` across the theme JSON showed only
+  `terminal.background`/`.foreground`, the 16 ANSI colors, and
+  `terminalCursor.foreground` set, confirming `terminal.border` and
+  `terminal.selectionBackground` (both real VS Code terminal color IDs)
+  were untouched gaps.
 
 ### v0.8.2
 - Added `editorSuggestWidget.*` (background, border, foreground,

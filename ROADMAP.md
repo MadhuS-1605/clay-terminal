@@ -1,6 +1,6 @@
 # Roadmap
 
-Current state (v0.8.3): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.4): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks,
 quick-fix lightbulb colors, inlay hint colors, symbol icon colors (Outline/
@@ -8,7 +8,8 @@ breadcrumbs/suggest widget), a themed autocomplete/suggest widget (chrome:
 background, border, selection, matched-text highlight), a themed
 integrated terminal panel (border, text-selection color), themed Markdown
 preview/walkthrough text colors
-(links, inline code, block quotes, code fences, separators), and
+(links, inline code, block quotes, code fences, separators), themed
+Source Control badges for merge conflicts/staged changes/submodules, and
 unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
 product icon theme, a first-run "Get Started" walkthrough covering both
 icon theme pickers and the color theme picker, a single palette source
@@ -102,6 +103,25 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.4
+- Added `gitDecoration.conflictingResourceForeground`, `.stageModifiedResourceForeground`,
+  `.stageDeletedResourceForeground`, and `.submoduleResourceForeground` to all 4
+  color theme variants — the Source Control view (and the matching file-explorer
+  badges) had no theme color for merge conflicts, staged changes, or submodules,
+  4 of the 9 real `gitDecoration.*` color IDs. Reused each theme's existing
+  `editorError.foreground` (same hex already used for `gitDecoration.
+  deletedResourceForeground`) for conflicting resources, the existing
+  `modifiedResourceForeground`/`deletedResourceForeground` hexes for their staged
+  counterparts, and existing `descriptionForeground` for submodules — no new hex
+  values introduced. Grounded find for this cycle: the active roadmap sections
+  were all either tagged (needs go-ahead) or required a human (the icon-theme
+  screenshot), so the theme JSON was checked against VS Code's full
+  color-theme key set again, same as the v0.7.12-v0.8.3 cycles — a grep for
+  `conflictingResourceForeground`/`stageModifiedResourceForeground`/
+  `stageDeletedResourceForeground`/`submoduleResourceForeground` across all 4
+  theme JSON files found zero matches, confirming a real, previously untouched
+  gap directly adjacent to the other 5 already-set `gitDecoration.*` keys.
 
 ### v0.8.3
 - Added `terminal.border` and `terminal.selectionBackground` to all 4 color

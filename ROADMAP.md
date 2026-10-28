@@ -1,9 +1,10 @@
 # Roadmap
 
-Current state (v0.8.4): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.5): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks,
-quick-fix lightbulb colors, inlay hint colors, symbol icon colors (Outline/
+quick-fix lightbulb colors, inlay hint colors, inline-suggestion ("ghost
+text") color, symbol icon colors (Outline/
 breadcrumbs/suggest widget), a themed autocomplete/suggest widget (chrome:
 background, border, selection, matched-text highlight), a themed
 integrated terminal panel (border, text-selection color), themed Markdown
@@ -103,6 +104,22 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.5
+- Added `editorGhostText.foreground` to all 4 color theme variants — the
+  inline-suggestion "ghost text" shown by Copilot/IntelliCode and VS Code's
+  own built-in word-based suggestions had no theme color, falling back to a
+  generic muted default. Reused each theme's existing `descriptionForeground`/
+  `editorInlayHint.foreground` hex (the same muted hint color already used
+  for inlay hints) — no new hex values introduced. `editorGhostText.border`
+  was left unset (not needed for legibility, and VS Code's own built-in
+  themes don't set it either) and `editorGhostText.background` was skipped
+  since it's a deprecated color ID. Grounded find for this cycle: the active
+  roadmap sections were all either tagged (needs go-ahead) or required a
+  human (the icon-theme screenshot), so the theme JSON was checked against
+  VS Code's full color-theme key set again, same as the v0.7.12-v0.8.4
+  cycles — `grep -ic ghostText` across all 4 theme JSON files found zero
+  matches, confirming a real, previously untouched gap.
 
 ### v0.8.4
 - Added `gitDecoration.conflictingResourceForeground`, `.stageModifiedResourceForeground`,

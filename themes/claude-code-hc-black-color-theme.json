@@ -33,6 +33,7 @@
     "editorInlayHint.background": "#c3c2b733",
     "editorInlayHint.typeForeground": "#bcd1ca",
     "editorInlayHint.parameterForeground": "#e4e3dd",
+    "editorGhostText.foreground": "#e4e3dd",
     "editorOverviewRuler.errorForeground": "#ec7e7e",
     "editorOverviewRuler.warningForeground": "#fab219",
     "editorOverviewRuler.infoForeground": "#6da7ec",

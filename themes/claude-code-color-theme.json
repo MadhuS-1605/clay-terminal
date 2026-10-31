@@ -235,7 +235,15 @@
     "textBlockQuote.background": "#2e2d27",
     "textBlockQuote.border": "#d97757",
     "textCodeBlock.background": "#2e2d27",
-    "textSeparator.foreground": "#2e2d27"
+    "textSeparator.foreground": "#2e2d27",
+    "quickInput.background": "#161615",
+    "quickInput.foreground": "#e4e3dd",
+    "quickInputTitle.background": "#0d0d0d",
+    "quickInputList.focusBackground": "#26261f",
+    "quickInputList.focusForeground": "#e4e3dd",
+    "quickInputList.focusIconForeground": "#e4e3dd",
+    "pickerGroup.foreground": "#898781",
+    "pickerGroup.border": "#20201f"
   },
   "tokenColors": [
     {

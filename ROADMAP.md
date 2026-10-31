@@ -1,13 +1,15 @@
 # Roadmap
 
-Current state (v0.8.5): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.6): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks,
 quick-fix lightbulb colors, inlay hint colors, inline-suggestion ("ghost
 text") color, symbol icon colors (Outline/
 breadcrumbs/suggest widget), a themed autocomplete/suggest widget (chrome:
 background, border, selection, matched-text highlight), a themed
-integrated terminal panel (border, text-selection color), themed Markdown
+integrated terminal panel (border, text-selection color), a themed Quick
+Open/Command Palette (background, title bar, focused row, section-header
+text/separator), themed Markdown
 preview/walkthrough text colors
 (links, inline code, block quotes, code fences, separators), themed
 Source Control badges for merge conflicts/staged changes/submodules, and
@@ -104,6 +106,27 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.6
+- Added `quickInput.background`, `.foreground`, `quickInputTitle.background`,
+  `quickInputList.focusBackground`, `.focusForeground`, `.focusIconForeground`,
+  `pickerGroup.foreground`, and `pickerGroup.border` to all 4 color theme
+  variants — the Quick Open / Command Palette widget (`Ctrl+P`/`Cmd+P`,
+  `Ctrl+Shift+P`) had no theme color at all, one of the most frequently used
+  UI surfaces in the editor. Reused each theme's existing `dropdown.background`/
+  `foreground` for the picker's own chrome (same pattern as the
+  `editorSuggestWidget` work in v0.8.2), existing `editorGroupHeader.
+  tabsBackground` for the title bar, existing `list.focusBackground`/
+  `.activeSelectionForeground` for the focused row, and existing
+  `descriptionForeground`/`editorGroupHeader.tabsBorder` for the
+  "recently opened" section-header text/separator — no new hex values
+  introduced. Grounded find for this cycle: the active roadmap sections
+  were all either tagged (needs go-ahead) or required a human (the
+  icon-theme screenshot), so the theme JSON was checked against VS Code's
+  full color-theme key set again, same as the v0.7.12-v0.8.5 cycles — a
+  grep for `quickInput`/`pickerGroup` across all 4 theme JSON files found
+  zero matches, confirming a real, previously untouched gap on a highly
+  visible surface.
 
 ### v0.8.5
 - Added `editorGhostText.foreground` to all 4 color theme variants — the

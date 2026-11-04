@@ -1,6 +1,6 @@
 # Roadmap
 
-Current state (v0.8.7): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.8): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks,
 quick-fix lightbulb colors, inlay hint colors, inline-suggestion ("ghost
@@ -8,9 +8,10 @@ text") color, symbol icon colors (Outline/
 breadcrumbs/suggest widget), a themed breadcrumb bar (background, text,
 focus/active-selection, picker dropdown), a themed autocomplete/suggest
 widget (chrome: background, border, selection, matched-text highlight), a
-themed integrated terminal panel (border, text-selection color), a themed
-Quick Open/Command Palette (background, title bar, focused row,
-section-header text/separator), themed Markdown
+themed right-click context menu/menu bar (background, text, border,
+separator, selection), a themed integrated terminal panel (border,
+text-selection color), a themed Quick Open/Command Palette (background,
+title bar, focused row, section-header text/separator), themed Markdown
 preview/walkthrough text colors
 (links, inline code, block quotes, code fences, separators), themed
 Source Control badges for merge conflicts/staged changes/submodules, and
@@ -107,6 +108,27 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.8
+- Added `menu.background`, `.foreground`, `.border`, `.separatorBackground`,
+  `.selectionBackground`, and `.selectionForeground` to all 4 color theme
+  variants — the right-click context menu and the File/Edit/View menu bar
+  had no theme color at all, one of the most frequently used UI surfaces in
+  the editor. Reused each theme's existing `dropdown.background`/`.border`
+  for the menu's own chrome (same pattern as the `quickInput`/
+  `editorSuggestWidget` work in v0.8.2/v0.8.6), existing top-level
+  `foreground` for its text, existing `dropdown.border` again for the
+  separator line between menu groups, and existing `list.
+  activeSelectionBackground`/`.activeSelectionForeground` for the
+  hovered/selected item — no new hex values introduced.
+  `menu.selectionBorder` was left unset, matching VS Code's own built-in
+  themes, since it isn't needed for the selected item to read clearly.
+  Grounded find for this cycle: the active roadmap sections were all either
+  tagged (needs go-ahead) or required a human (the icon-theme screenshot),
+  so the theme JSON was checked against VS Code's full color-theme key set
+  again, same as the v0.7.12-v0.8.7 cycles — a grep for `"menu\.` across
+  all 4 theme JSON files found zero matches, confirming a real,
+  previously untouched gap on a highly visible surface.
 
 ### v0.8.7
 - Added `breadcrumb.background`, `.foreground`, `.focusForeground`,

@@ -1,6 +1,6 @@
 # Roadmap
 
-Current state (v0.8.8): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.9): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, diagnostic scrollbar/gutter marks,
 quick-fix lightbulb colors, inlay hint colors, inline-suggestion ("ghost
@@ -8,7 +8,8 @@ text") color, symbol icon colors (Outline/
 breadcrumbs/suggest widget), a themed breadcrumb bar (background, text,
 focus/active-selection, picker dropdown), a themed autocomplete/suggest
 widget (chrome: background, border, selection, matched-text highlight), a
-themed right-click context menu/menu bar (background, text, border,
+themed hover tooltip (background, border, text, status-bar strip,
+highlighted text), a themed right-click context menu/menu bar (background, text, border,
 separator, selection), a themed integrated terminal panel (border,
 text-selection color), a themed Quick Open/Command Palette (background,
 title bar, focused row, section-header text/separator), themed Markdown
@@ -108,6 +109,25 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.9
+- Added `editorHoverWidget.background`, `.border`, `.foreground`,
+  `.statusBarBackground`, and `.highlightForeground` to all 4 color theme
+  variants — the hover tooltip shown when hovering a symbol for type info,
+  docs, or a diagnostic message had no theme color at all, one of the most
+  frequently seen UI surfaces during everyday coding. Reused each theme's
+  existing `dropdown.background`/`.border` for the tooltip's own chrome
+  (same pattern as the `editorSuggestWidget`/`quickInput`/`menu` work in
+  v0.8.2/v0.8.6/v0.8.8), existing top-level `foreground` for its text,
+  existing `statusBar.background` for the small status-bar strip at the
+  bottom of multi-part hovers, and existing `button.background` (coral)
+  for highlighted text — no new hex values introduced. Grounded find for
+  this cycle: the active roadmap sections were all either tagged (needs
+  go-ahead) or required a human (the icon-theme screenshot), so the theme
+  JSON was checked against VS Code's full color-theme key set again, same
+  as the v0.7.12-v0.8.8 cycles — a grep for `hoverWidget`/
+  `editorHoverWidget` across all 4 theme JSON files found zero matches,
+  confirming a real, previously untouched gap on a highly visible surface.
 
 ### v0.8.8
 - Added `menu.background`, `.foreground`, `.border`, `.separatorBackground`,

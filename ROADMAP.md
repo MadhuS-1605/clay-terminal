@@ -1,8 +1,9 @@
 # Roadmap
 
-Current state (v0.8.9): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.10): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
-notification/debug/problems colors, diagnostic scrollbar/gutter marks,
+notification/debug/problems colors, status bar error/warning/remote-indicator
+badge colors, diagnostic scrollbar/gutter marks,
 quick-fix lightbulb colors, inlay hint colors, inline-suggestion ("ghost
 text") color, symbol icon colors (Outline/
 breadcrumbs/suggest widget), a themed breadcrumb bar (background, text,
@@ -109,6 +110,28 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.10
+- Added `statusBarItem.errorBackground`, `.errorForeground`, `.warningBackground`,
+  `.warningForeground`, `.remoteBackground`, and `.remoteForeground` to all 4
+  color theme variants — the status-bar badges for the editor's error/warning
+  counts and the remote-connection indicator (Remote-SSH/WSL/Containers/
+  Codespaces) had no theme color at all, a surface visible on essentially
+  every working day. Reused each theme's existing `editorError.foreground`/
+  `editorWarning.foreground` for the error/warning fills and existing
+  `badge.background`/`.foreground` for the remote-indicator fill — no new hex
+  values introduced. For the badge text color, WCAG contrast ratios were
+  computed across all 4 themes for the two available text colors
+  (`foreground` vs. `statusBar.debuggingForeground`); `statusBar.
+  debuggingForeground` won in every case but one and was dramatically better
+  in the high-contrast variants (as low as 1.83:1 with plain `foreground` vs.
+  11.45:1 with `debuggingForeground`), so both badge foregrounds reuse it
+  instead. Grounded find for this cycle: the active roadmap sections were all
+  either tagged (needs go-ahead) or required a human (the icon-theme
+  screenshot), so the theme JSON was checked against VS Code's full
+  color-theme key set again, same as the v0.7.12-v0.8.9 cycles — a grep for
+  `statusBarItem` across all 4 theme JSON files found zero matches,
+  confirming a real, previously untouched gap.
 
 ### v0.8.9
 - Added `editorHoverWidget.background`, `.border`, `.foreground`,

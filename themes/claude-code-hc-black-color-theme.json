@@ -245,7 +245,13 @@
     "quickInputList.focusForeground": "#ffffff",
     "quickInputList.focusIconForeground": "#ffffff",
     "pickerGroup.foreground": "#e4e3dd",
-    "pickerGroup.border": "#f0b48c"
+    "pickerGroup.border": "#f0b48c",
+    "statusBarItem.errorBackground": "#ec7e7e",
+    "statusBarItem.errorForeground": "#000000",
+    "statusBarItem.warningBackground": "#fab219",
+    "statusBarItem.warningForeground": "#000000",
+    "statusBarItem.remoteBackground": "#d97757",
+    "statusBarItem.remoteForeground": "#000000"
   },
   "tokenColors": [
     {

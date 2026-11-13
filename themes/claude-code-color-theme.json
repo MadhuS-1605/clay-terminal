@@ -67,6 +67,7 @@
     "menu.selectionForeground": "#e4e3dd",
     "list.hoverBackground": "#161615",
     "list.focusBackground": "#26261f",
+    "tree.indentGuidesStroke": "#2e2d27",
     "activityBar.background": "#0d0d0d",
     "activityBar.foreground": "#d97757",
     "activityBar.inactiveForeground": "#5c5a52",

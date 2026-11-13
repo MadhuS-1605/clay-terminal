@@ -1,6 +1,6 @@
 # Roadmap
 
-Current state (v0.8.10): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.11): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, test explorer,
 notification/debug/problems colors, status bar error/warning/remote-indicator
 badge colors, diagnostic scrollbar/gutter marks,
@@ -32,7 +32,8 @@ icon generator, all 4 color themes, a Starship prompt preset
 the extension, and CI validation (`icons/validate_theme.py`) covering both icon themes'
 references and font paths, a regression guard asserting all 16 terminal
 ANSI colors stay defined in every color theme, and a palette-drift guard
-asserting the coral/warm-gray colors stay present in every color theme.
+asserting the coral/warm-gray colors stay present in every color theme, and
+a themed indent-guide color for the file Explorer and other tree views.
 
 This file is read and updated by the automated release process (see
 `.github/workflows` and the `clay-terminal-auto-release` cloud routine).
@@ -110,6 +111,20 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.11
+- Added `tree.indentGuidesStroke` to all 4 color theme variants — the
+  Explorer file tree (and other tree-based views) had no theme color for
+  its indent guides, falling back to VS Code's generic default even though
+  the editor's own indent guides have been themed since early releases.
+  Reused each theme's existing `editorIndentGuide.background1` hex — no new
+  hex values introduced. Grounded find for this cycle: the active roadmap
+  sections were all either tagged (needs go-ahead) or required a human (the
+  icon-theme screenshot), so the theme JSON was checked against VS Code's
+  full color-theme key set again, same as the v0.7.12-v0.8.10 cycles — a
+  grep for `indentGuidesStroke` across all 4 theme JSON files found zero
+  matches, confirming a real, previously untouched gap on a surface (the
+  file Explorer) visible on essentially every working day.
 
 ### v0.8.10
 - Added `statusBarItem.errorBackground`, `.errorForeground`, `.warningBackground`,

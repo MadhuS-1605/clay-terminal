@@ -65,6 +65,7 @@
     "list.hoverBackground": "#d9775722",
     "list.focusBackground": "#d9775733",
     "list.focusOutline": "#d97757",
+    "tree.indentGuidesStroke": "#4a4840",
     "menu.background": "#000000",
     "menu.foreground": "#ffffff",
     "menu.border": "#f0b48c",

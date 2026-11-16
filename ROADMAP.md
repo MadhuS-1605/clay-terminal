@@ -1,7 +1,8 @@
 # Roadmap
 
-Current state (v0.8.11): 4 color theme variants (dark, light, hc-black,
-hc-light) with semantic highlighting, bracket-pair colors, test explorer,
+Current state (v0.8.12): 4 color theme variants (dark, light, hc-black,
+hc-light) with semantic highlighting, bracket-pair colors, bracket-pair
+guide (vertical connector) colors, test explorer,
 notification/debug/problems colors, status bar error/warning/remote-indicator
 badge colors, diagnostic scrollbar/gutter marks,
 quick-fix lightbulb colors, inlay hint colors, inline-suggestion ("ghost
@@ -111,6 +112,28 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.12
+- Added `editorBracketPairGuide.background1`-`.background6` and
+  `.activeBackground1`-`.activeBackground6` to all 4 color theme variants —
+  the vertical bracket-pair guide lines (`editor.guides.bracketPairs`,
+  already enabled by this extension's own recommended settings alongside
+  `bracketPairColorization.enabled`) had no theme color at all, so the
+  connector lines rendered invisible even though the bracket characters
+  themselves are colorized via `editorBracketHighlight.foreground1-6`.
+  Reused each theme's existing `editorBracketHighlight.foreground1-6` hex
+  values for both: a `33` alpha (~20%, matching the existing
+  `editorInlayHint.background` convention) for the resting
+  `background1-6` so the guides stay subtle, and the solid hex for
+  `activeBackground1-6` so the guide enclosing the cursor's current
+  bracket pair reads clearly — no new hex values introduced. Grounded
+  find for this cycle: the active roadmap sections were all either tagged
+  (needs go-ahead) or required a human (the icon-theme screenshot), so the
+  theme JSON was checked against VS Code's full color-theme key set
+  again, same as the v0.7.12-v0.8.11 cycles — a grep for
+  `editorBracketPairGuide` across all 4 theme JSON files found zero
+  matches, confirming a real, previously untouched gap directly adjacent
+  to the existing `editorBracketHighlight` work.
 
 ### v0.8.11
 - Added `tree.indentGuidesStroke` to all 4 color theme variants — the

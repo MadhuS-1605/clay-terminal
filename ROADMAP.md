@@ -1,6 +1,6 @@
 # Roadmap
 
-Current state (v0.8.12): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.13): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, bracket-pair
 guide (vertical connector) colors, test explorer,
 notification/debug/problems colors, status bar error/warning/remote-indicator
@@ -34,7 +34,8 @@ the extension, and CI validation (`icons/validate_theme.py`) covering both icon 
 references and font paths, a regression guard asserting all 16 terminal
 ANSI colors stay defined in every color theme, and a palette-drift guard
 asserting the coral/warm-gray colors stay present in every color theme, and
-a themed indent-guide color for the file Explorer and other tree views.
+a themed indent-guide color for the file Explorer and other tree views, and
+a themed CodeLens text color.
 
 This file is read and updated by the automated release process (see
 `.github/workflows` and the `clay-terminal-auto-release` cloud routine).
@@ -112,6 +113,22 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.13
+- Added `editorCodeLens.foreground` to all 4 color theme variants — CodeLens
+  text (the "N references", test-run, and Git Blame-style annotations shown
+  above functions/classes by the built-in reference provider, the already-
+  themed test explorer, and common extensions) had no theme color at all,
+  falling back to VS Code's generic default. Reused each theme's existing
+  `descriptionForeground` hex — the same muted-text value already reused for
+  `editorGhostText.foreground` and `editorInlayHint.foreground` — no new hex
+  values introduced. Grounded find for this cycle: the active roadmap
+  sections were all either tagged (needs go-ahead) or required a human (the
+  icon-theme screenshot), so the theme JSON was checked against VS Code's
+  full color-theme key set again, same as the v0.7.12-v0.8.12 cycles — a
+  grep for `codelens` (case-insensitive) across all 4 theme JSON files found
+  zero matches, confirming a real, previously untouched gap on a surface
+  (CodeLens annotations) visible on essentially every working day.
 
 ### v0.8.12
 - Added `editorBracketPairGuide.background1`-`.background6` and

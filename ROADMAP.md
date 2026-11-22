@@ -1,6 +1,6 @@
 # Roadmap
 
-Current state (v0.8.13): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.14): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, bracket-pair
 guide (vertical connector) colors, test explorer,
 notification/debug/problems colors, status bar error/warning/remote-indicator
@@ -18,7 +18,8 @@ title bar, focused row, section-header text/separator), themed Markdown
 preview/walkthrough text colors
 (links, inline code, block quotes, code fences, separators), themed
 Source Control badges for merge conflicts/staged changes/submodules, and
-unnecessary-code fading, a 98-icon file icon theme, a scoped 8-glyph
+unnecessary-code fading, a themed marker-navigation widget (the inline
+next/previous problem popover), a 98-icon file icon theme, a scoped 8-glyph
 product icon theme, a first-run "Get Started" walkthrough covering both
 icon theme pickers and the color theme picker, a single palette source
 (`icons/palette.py`) for the coral/warm-gray hex values shared by the
@@ -113,6 +114,26 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.14
+- Added `editorMarkerNavigation.background`, `editorMarkerNavigationError.background`,
+  `editorMarkerNavigationWarning.background`, and `editorMarkerNavigationInfo.background`
+  to all 4 color theme variants — the marker navigation widget (the inline
+  popover shown when pressing F8/Shift+F8 or clicking a squiggle's "Go to
+  Next/Previous Problem" arrows) had no theme color at all, falling back to
+  VS Code's generic defaults on a surface used every time a diagnostic is
+  navigated inline. Reused each theme's existing `editor.background` for the
+  widget's own chrome and existing `editorError.foreground`/
+  `editorWarning.foreground`/`editorInfo.foreground` for the three severity
+  accents — the same full-opacity reuse pattern already used for
+  `editorGutter.errorBackground`/`.warningBackground` since v0.6.1 — no new
+  hex values introduced. Grounded find for this cycle: the active roadmap
+  sections were all either tagged (needs go-ahead) or required a human (the
+  icon-theme screenshot), so the theme JSON was checked against VS Code's
+  full color-theme key set again, same as the v0.7.12-v0.8.13 cycles — a
+  grep for `markerNavigation` across all 4 theme JSON files found zero
+  matches, confirming a real, previously untouched gap directly adjacent to
+  the existing error/warning/info diagnostic work.
 
 ### v0.8.13
 - Added `editorCodeLens.foreground` to all 4 color theme variants — CodeLens

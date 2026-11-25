@@ -1,8 +1,9 @@
 # Roadmap
 
-Current state (v0.8.14): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.15): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, bracket-pair
-guide (vertical connector) colors, test explorer,
+guide (vertical connector) colors, a themed generic editor widget chrome
+(Find/Replace, Rename Symbol, Parameter Hints), test explorer,
 notification/debug/problems colors, status bar error/warning/remote-indicator
 badge colors, diagnostic scrollbar/gutter marks,
 quick-fix lightbulb colors, inlay hint colors, inline-suggestion ("ghost
@@ -114,6 +115,29 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.15
+- Added `editorWidget.background`, `.foreground`, and `.border` to all 4
+  color theme variants — the generic editor-widget chrome used by
+  Find/Replace, Rename Symbol, Parameter Hints, and other inline editor
+  overlays had no theme color at all, falling back to VS Code's generic
+  defaults on a surface opened essentially every time a file is searched
+  (`Ctrl+F`) or a symbol is renamed (`F2`). Reused each theme's existing
+  `editorHoverWidget.background`/`.border` hex (itself `dropdown.background`/
+  `.border`) for the widget's own chrome, and existing top-level `foreground`
+  for its text — the same full-opacity reuse pattern already used for the
+  `editorHoverWidget`/`quickInput`/`menu` work in v0.8.9/v0.8.6/v0.8.8 — no
+  new hex values introduced. `editorWidget.resizeBorder` was left unset,
+  matching the precedent of leaving optional, rarely-rendered sub-properties
+  unset (e.g. `editorGhostText.border` in v0.8.5), since it's only used by a
+  widget that opts into a resize handle. Grounded find for this cycle: the
+  active roadmap sections were all either tagged (needs go-ahead) or
+  required a human (the icon-theme screenshot), so the theme JSON was
+  checked against VS Code's full color-theme key set again, same as the
+  v0.7.12-v0.8.14 cycles — a grep for `editorWidget` across all 4 theme JSON
+  files found zero matches, confirming a real, previously untouched gap
+  distinct from the already-themed `editorHoverWidget` (hover tooltips only)
+  and `editorSuggestWidget` (autocomplete only).
 
 ### v0.8.14
 - Added `editorMarkerNavigation.background`, `editorMarkerNavigationError.background`,

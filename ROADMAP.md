@@ -1,6 +1,6 @@
 # Roadmap
 
-Current state (v0.8.15): 4 color theme variants (dark, light, hc-black,
+Current state (v0.8.16): 4 color theme variants (dark, light, hc-black,
 hc-light) with semantic highlighting, bracket-pair colors, bracket-pair
 guide (vertical connector) colors, a themed generic editor widget chrome
 (Find/Replace, Rename Symbol, Parameter Hints), test explorer,
@@ -36,8 +36,9 @@ the extension, and CI validation (`icons/validate_theme.py`) covering both icon 
 references and font paths, a regression guard asserting all 16 terminal
 ANSI colors stay defined in every color theme, and a palette-drift guard
 asserting the coral/warm-gray colors stay present in every color theme, and
-a themed indent-guide color for the file Explorer and other tree views, and
-a themed CodeLens text color.
+a themed indent-guide color for the file Explorer and other tree views, a
+themed CodeLens text color, and a themed title-bar Command Center (the
+search/breadcrumb box shown in the title bar by default).
 
 This file is read and updated by the automated release process (see
 `.github/workflows` and the `clay-terminal-auto-release` cloud routine).
@@ -115,6 +116,33 @@ true` in `.github/workflows/release.yml`), so no separate changelog
 automation is needed.
 
 ## Shipped
+
+### v0.8.16
+- Added `commandCenter.foreground`, `.activeForeground`, `.background`,
+  `.activeBackground`, `.border`, `.activeBorder`, and `.inactiveBorder` to
+  all 4 color theme variants — the title-bar Command Center (the
+  search/breadcrumb box shown in the title bar, enabled by default since
+  VS Code 1.76) had no theme color at all, falling back to VS Code's
+  generic defaults on a surface visible on essentially every working day.
+  Reused each theme's existing `dropdown.background`/`.border` for the
+  widget's own chrome (the same full-opacity reuse pattern already used
+  for `quickInput`/`menu`/`editorSuggestWidget`/`breadcrumbPicker`),
+  existing `titleBar.activeForeground` for its default text/icon color
+  (already identical to top-level `foreground` in every variant, since the
+  title bar already renders at full brightness), existing
+  `list.hoverBackground` for the hover/active-state fill, existing
+  `focusBorder` for the hover/active-state border, and existing
+  `titleBar.border` for the inactive-window border — no new hex values
+  introduced. Grounded find for this cycle: the active roadmap sections
+  were all either tagged (needs go-ahead) or required a human (the
+  icon-theme screenshot), so VS Code's actual source was checked instead of
+  just the theme JSON — fetching `titlebarpart.css` from VS Code's GitHub
+  repo confirmed the exact `--vscode-commandCenter-*` custom-property names
+  it consumes, and a grep for `commandCenter` across all 4 theme JSON files
+  found zero matches, confirming a real, previously untouched gap. Also
+  backfilled the README's feature-summary sentence with the `editorWidget`
+  (v0.8.15) and `editorMarkerNavigation` (v0.8.14) mentions it had been
+  missing since those releases shipped.
 
 ### v0.8.15
 - Added `editorWidget.background`, `.foreground`, and `.border` to all 4
